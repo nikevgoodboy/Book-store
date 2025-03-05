@@ -712,6 +712,9 @@
   .animate-none {
     animation: none;
   }
+  .cursor-alias {
+    cursor: alias;
+  }
   .cursor-pointer {
     cursor: pointer;
   }
