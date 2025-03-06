@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../scripts/test.js"></script>
     <style>
         @keyframes fadeInUp {
             from {
@@ -20,26 +21,73 @@
         }
     </style>
 </head>
-<body class="flex justify-center items-center min-h-screen bg-gray-100">
-    <div class="flex gap-6">
-        <div class="flex flex-col items-center animate-fadeInUp">
-            <div class="w-24 h-24 rounded-full border-2 border-gray-300 bg-green-100 flex items-center justify-center text-xl font-bold text-black">
-                ៣៦៥+
-            </div>
-            <p class="mt-2 text-black text-center">អត្ថបទថ្មី</p>
+<body>
+    
+    <footer class="bg-[#F2F6D0] mt-15 p-6 md:p-10">
+        <!-- Logo & Title -->
+        <span class="text-xl sm:text-2xl font-[Poppins] cursor-pointer flex justify-center items-center py-2">
+            <img class="h-8 sm:h-10 inline" src="../assets/logo.png" alt="">
+            សៀវភៅគំនិត
+        </span>
+    
+        <!-- Main Heading -->
+        <h2 class="text-center text-lg sm:text-2xl md:text-[30px] text-[#443627] mt-2">
+            ចាប់ផ្ដើមការអាន​ និងទទួលយកបទពិសោធន៍ថ្មីៗ
+            <br> ជាមួយសៀវភៅគំនិត
+        </h2>
+    
+        <!-- Input Section -->
+        <div class="relative flex flex-col sm:flex-row justify-center items-center py-5 space-y-3 sm:space-y-0 sm:space-x-3">
+            <input type="text" class="pl-10 pr-4 py-2 w-full sm:w-[300px] md:w-[400px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="អុីម៉ែល...">
+            <button class="px-4 py-2 bg-[#443627] text-[#D98324] hover:bg-amber-900 hover:text-blue-500 rounded-md w-full sm:w-auto">
+                <a href="">សាកល្បង</a>
+            </button>
         </div>
-        <div class="flex flex-col items-center animate-fadeInUp delay-200">
-            <div class="w-24 h-24 rounded-full border-2 border-gray-300 bg-green-100 flex items-center justify-center text-xl font-bold text-black">
-                ៦៣៣+
-            </div>
-            <p class="mt-2 text-black text-center">សៀវភៅឡាក់</p>
+    
+        <!-- Social Icons -->
+        <div class="flex justify-center items-center space-x-3 sm:space-x-5 mt-3">
+            <a href=""><ion-icon name="logo-twitter" class="w-[30px] sm:w-[40px] h-[30px] sm:h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-facebook" class="w-[30px] sm:w-[40px] h-[30px] sm:h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-instagram" class="w-[30px] sm:w-[40px] h-[30px] sm:h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-youtube" class="w-[30px] sm:w-[40px] h-[30px] sm:h-[40px]"></ion-icon></a>
         </div>
-        <div class="flex flex-col items-center animate-fadeInUp delay-400">
-            <div class="w-24 h-24 rounded-full border-2 border-gray-300 bg-green-100 flex items-center justify-center text-xl font-bold text-black">
-                ៥៥៥+
+    
+        <!-- Navigation Links -->
+        <div class="mt-5">
+            <ul class="flex flex-wrap justify-center items-center space-x-3 sm:space-x-5 text-sm sm:text-base">
+                <li><a href="">ទំព័រដើម</a></li>
+                <li><a href="">សៀវភៅ</a></li>
+                <li><a href="">អ្នកនិពន្ធ</a></li>
+                <li><a href="">ព័ត៌មានបន្ថែម</a></li>
+                <li><a href="">អំពីយើង</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="flex justify-center items-center mt-10">
+        <div class="flex gap-6">
+            <div class="flex flex-col items-center" id="counter1">
+                <div class="w-24 h-24 rounded-full border-2 border-gray-300 bg-green-100 flex items-center justify-center text-xl font-bold text-black">
+                    <span class="counter" data-target="365">0+</span>
+                </div>
+                <p class="mt-2 text-black text-center">អ្នកចូលចិត្ត</p>
             </div>
-            <p class="mt-2 text-black text-center">សៀវភៅផ្សេងៗ</p>
+            <div class="flex flex-col items-center" id="counter2">
+                <div class="w-24 h-24 rounded-full border-2 border-gray-300 bg-green-100 flex items-center justify-center text-xl font-bold text-black">
+                    <span class="counter" data-target="963">0+</span>
+                </div>
+                <p class="mt-2 text-black text-center">សៀវភៅលក់</p>
+            </div>
+            <div class="flex flex-col items-center" id="counter3">
+                <div class="w-24 h-24 rounded-full border-2 border-gray-300 bg-green-100 flex items-center justify-center text-xl font-bold text-black">
+                    <span class="counter" data-target="999">0+</span>
+                </div>
+                <p class="mt-2 text-black text-center">សៀវភៅថ្មីៗ</p>
+            </div>
         </div>
     </div>
+    
+    
+    
 </body>
 </html>
