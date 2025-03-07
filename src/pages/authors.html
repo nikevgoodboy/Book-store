@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../output.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
@@ -13,15 +15,15 @@
                 <img class="h-10 inline" src="../assets/logo.png" alt="">
                 សៀវភៅគំនិត
             </span>
-
-            <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+    
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block" onclick="Menu(this)">
+                <ion-icon name="menu-outline"></ion-icon>
             </span>
         </div>
-
+    
         <div>
-            <ul class="md:flex md:items-center z-[-1] md:-z-auto md:static absolute w-full left-0
-            md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opasity-0 top-[-400px] transition-all ease-in duration-500">
+            <ul id="menu-list" class="md:flex md:items-center z-50 md:z-auto md:static absolute w-full left-0
+            md:w-auto md:py-0 py-4 md:pl-0 pl-7 opacity-0 md:opacity-100 top-[-400px] transition-all ease-in duration-500 bg-white md:bg-transparent">
                 <li class="mx-4 my-5 md:my-0">
                     <a class="text-xl hover:text-cyan-500 duration-500" href="#">ទំព័រដើម</a>
                 </li>
@@ -37,26 +39,166 @@
                 <li class="mx-4 my-5 md:my-0">
                     <a class="text-xl hover:text-cyan-500 duration-500" href="#">អំពីយើង</a>
                 </li>
-
-                <button class="bg-[#443627]  text-white duration-500 px-6 py-2 mx-4 hover:bg-amber-700 rounded-lg">
+    
+                <button class="bg-[#443627] text-white duration-500 px-6 py-2 mx-4 hover:bg-amber-700 rounded-lg">
                     <a class="text-[#D98324]" href="#">ទំនាក់ទំនង</a>
                 </button>
             </ul>
         </div>
     </nav>
+    
     <script>
-        function Menu(e) {
-            let list=document.querySelector('ul');
-            e.name ===  'menu' ? (e.name = "close",list.classList.add('top-[80px]'),
-            list.classList.add('opacity-100')) : (e.name = "menu",list.classList.remove('top-[80px]'),
-            list.classList.remove('opacity-100'));
+        function Menu(icon) {
+            let list = document.getElementById("menu-list");
+            if (list.classList.contains("top-[-400px]")) {
+                list.classList.replace("top-[-400px]", "top-[80px]");
+                list.classList.replace("opacity-0", "opacity-100");
+                icon.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
+            } else {
+                list.classList.replace("top-[80px]", "top-[-400px]");
+                list.classList.replace("opacity-100", "opacity-0");
+                icon.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
+            }
         }
     </script>
 
     <h1 class="text-[#443627] p-5 text-3xl text-center">អ្នកនិពន្ធ</h1>
     <div class="w-25 mx-auto h-1 bg-[#D98324]"></div>
 
+    <div class="max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card -->
+        <div class="bg-amber-200 p-4 duration-500 hover:scale-105 cursor-pointer rounded-xl text-center shadow-lg">
+            <img src="../assets/Authors-1.png" class="h-20 mx-auto" alt="Author">
+            <h4 class="uppercase text-xl font-bold">ថុន ថាវរី</h4>
+            <p class="text-sm leading-7 my-3 font-light opacity-50">
+                នាងខ្ញុំឈ្មោះ ថុន ថាវរី បានទទួលបរិញ្ញាបត្រមកពីសាកលវិទ្យាល័យ Hradec Kralove, 
+                សាធារណរដ្ឋឆែកនៅក្នុងជំនាញគ្រប់គ្រងពត៌មានវិទ្យា។
+            </p>
+            <button class="bg-white mt-4 duration-500 px-6 py-2 w-full hover:bg-amber-700 rounded-lg border-2 border-amber-950">
+                <a class="text-[#D98324] text-lg font-bold" href="#">អានបន្ត</a>
+            </button>
+        </div>
     
+        <div class="bg-amber-200 p-4 duration-500 hover:scale-105 cursor-pointer rounded-xl text-center shadow-lg">
+            <img src="../assets/Authors-2.png" class="h-20 mx-auto" alt="Author">
+            <h4 class="uppercase text-xl font-bold">ម៉ៅ ចាន់រស្មី</h4>
+            <p class="text-sm leading-7 my-3 font-light opacity-50">
+                ខ្ញុំជាកូនទោលក្នុងគ្រួសារ តែដោយហេតុថាឪពុកម្តាយរបស់ខ្ញុំបានរស់នៅបែកពីគ្នា ទើបខ្ញុំចំណាយពេលតាំងពីកុមារភាព ជាមួយតែម្តាយប៉ុណ្ណោះ។
+            </p>
+            <button class="bg-white mt-4 duration-500 px-6 py-2 w-full hover:bg-amber-700 rounded-lg border-2 border-amber-950">
+                <a class="text-[#D98324] text-lg font-bold" href="#">អានបន្ត</a>
+            </button>
+        </div>
 
+        <div class="bg-amber-200 p-4 duration-500 hover:scale-105 cursor-pointer rounded-xl text-center shadow-lg">
+            <img src="../assets/Authors-3.png" class="h-20 mx-auto" alt="Author">
+            <h4 class="uppercase text-xl font-bold">ម៉ៅ សំណាង</h4>
+            <p class="text-sm leading-7 my-3 font-light opacity-50">
+                នាងខ្ញុំឈ្មោះម៉ៅ សំណាង កើតនៅឆ្នាំ១៩៥៩ បានសិក្សាដល់ថ្នាក់ទី១ ទំនើបជាតិ ក្នុងរបបសាធារណរដ្ឋលន់នល់។ ឪពុកឈ្មោះម៉ៅ (ទទួលមរណភាពក្នុងរបបប៉ុលពត)។
+            </p>
+            <button class="bg-white mt-4 duration-500 px-6 py-2 w-full hover:bg-amber-700 rounded-lg border-2 border-amber-950">
+                <a class="text-[#D98324] text-lg font-bold" href="#">អានបន្ត</a>
+            </button>
+        </div>
+
+        <div class="bg-amber-200 p-4 duration-500 hover:scale-105 cursor-pointer rounded-xl text-center shadow-lg">
+            <img src="../assets/Authors-4.png" class="h-20 mx-auto" alt="Author">
+            <h4 class="uppercase text-xl font-bold">ឡាំ ឡាយ</h4>
+            <p class="text-sm leading-7 my-3 font-light opacity-50">
+                ឡាំ ឡាយ បានកើតនៅក្នុងគ្រួសារកសិករមួយនៅក្នុងខេត្តសៀមរាប។ គាត់ជានិសិត្សបរិញ្ញាបត្រ ផ្នែកគ្រប់ធុរកិច្ច និងវិទ្យាសាស្រ្តសេដ្ឋកិច្ច។
+            </p>
+            <button class="bg-white mt-4 duration-500 px-6 py-2 w-full hover:bg-amber-700 rounded-lg border-2 border-amber-950">
+                <a class="text-[#D98324] text-lg font-bold" href="#">អានបន្ត</a>
+            </button>
+        </div>
+
+        <div class="bg-amber-200 p-4 duration-500 hover:scale-105 cursor-pointer rounded-xl text-center shadow-lg">
+            <img src="../assets/Authors-5.png" class="h-20 mx-auto" alt="Author">
+            <h4 class="uppercase text-xl font-bold">កែវ សេងរដ្ឋា</h4>
+            <p class="text-sm leading-7 my-3 font-light opacity-50">
+                កែវ សេងរដ្ឋា ជានិស្សិតវេជ្ជសាស្ត្រឯកទេសផ្នែកវះកាត់ទូទៅ និងប្រព័ន្ធរំលាយអាហារនៅសាកលវិទ្យាល័យវិទ្យាសាស្ត្រសុខាភិបាល។
+            </p>
+            <button class="bg-white mt-4 duration-500 px-6 py-2 w-full hover:bg-amber-700 rounded-lg border-2 border-amber-950">
+                <a class="text-[#D98324] text-lg font-bold" href="#">អានបន្ត</a>
+            </button>
+        </div>
+
+        <div class="bg-amber-200 p-4 duration-500 hover:scale-105 cursor-pointer rounded-xl text-center shadow-lg">
+            <img src="../assets/Authors-6.png" class="h-20 mx-auto" alt="Author">
+            <h4 class="uppercase text-xl font-bold">អ៊ុច ថាវី</h4>
+            <p class="text-sm leading-7 my-3 font-light opacity-50">
+                កាលបរិច្ឆេទចាប់អាជីពជាអ្នកនិពន្ធ ឆ្នាំ២០០១ ក្នុងតំណែងជាអ្នកសរសេររឿងវីដេអូអប់រំនៅអង្គការមណ្ឌលព័ត៌មានស្ត្រីកម្ពុជា។
+            </p>
+            <button class="bg-white mt-4 duration-500 px-6 py-2 w-full hover:bg-amber-700 rounded-lg border-2 border-amber-950">
+                <a class="text-[#D98324] text-lg font-bold" href="#">អានបន្ត</a>
+            </button>
+        </div>
+
+        <div class="bg-amber-200 p-4 duration-500 hover:scale-105 cursor-pointer rounded-xl text-center shadow-lg">
+            <img src="../assets/Authors-7.png" class="h-20 mx-auto" alt="Author">
+            <h4 class="uppercase text-xl font-bold">មឿន ញាណ</h4>
+            <p class="text-sm leading-7 my-3 font-light opacity-50">
+                ខ្ញុំឈ្មោះ មឿន ញាណ ខ្ញុំកើតនៅឆ្នាំ ១៩៧២ ទីកន្លែងកំណើត ស្រុកបាទី ខេត្តតាកែវ។​ ផ្តើមចេញពីការស្រឡាញ់ធម្មជាតនិងការចូលចិត្តថតរូប...
+            </p>
+            <button class="bg-white mt-4 duration-500 px-6 py-2 w-full hover:bg-amber-700 rounded-lg border-2 border-amber-950">
+                <a class="text-[#D98324] text-lg font-bold" href="#">អានបន្ត</a>
+            </button>
+        </div>
+
+        <div class="bg-amber-200 p-4 duration-500 hover:scale-105 cursor-pointer rounded-xl text-center shadow-lg">
+            <img src="../assets/Authors-8.png" class="h-20 mx-auto" alt="Author">
+            <h4 class="uppercase text-xl font-bold">ធឿន សុធា</h4>
+            <p class="text-sm leading-7 my-3 font-light opacity-50">
+                ខ្ញុំបាទឈ្មោះ ធឿន សុធា កើតនៅឆ្នាំ១៩៨៥ ជាកូនទី២ក្នុងចំណោមបងប្អូន ៦នាក់ (ប្រុស៣ ស្រី៣)។ ខ្ញុំបានចាប់កំណើតនៅក្នុងគ្រួសារកសិករមួយ ខេត្តកំពង់ស្ពី។
+            </p>
+            <button class="bg-white mt-4 duration-500 px-6 py-2 w-full hover:bg-amber-700 rounded-lg border-2 border-amber-950">
+                <a class="text-[#D98324] text-lg font-bold" href="#">អានបន្ត</a>
+            </button>
+        </div>
+
+        <div class="bg-amber-200 p-4 duration-500 hover:scale-105 cursor-pointer rounded-xl text-center shadow-lg">
+            <img src="../assets/Authors-9.png" class="h-20 mx-auto" alt="Author">
+            <h4 class="uppercase text-xl font-bold">ទីម សុឃៀង</h4>
+            <p class="text-sm leading-7 my-3 font-light opacity-50">
+                លោក ទីម សុឃៀង (ទិនករ) កើតនៅក្នុងខេត្តព្រះសីហនុ ប៉ុន្តែធំធាត់ឡើងនៅក្នុងខេត្តព្រៃវែង ហើយបច្ចុប្បន្នរស់នៅរាជធានីភ្នំពេញ។
+            </p>
+            <button class="bg-white mt-4 duration-500 px-6 py-2 w-full hover:bg-amber-700 rounded-lg border-2 border-amber-950">
+                <a class="text-[#D98324] text-lg font-bold" href="#">អានបន្ត</a>
+            </button>
+        </div>
+    
+    </div>
+
+    <footer class="bg-[#F2F6D0] mt-20">
+        <span class="text-2xl font-[Poppins] cursor-pointer justify-center items-center flex py-2">
+            <img class="h-10 inline" src="../assets/logo.png" alt="">
+            សៀវភៅគំនិត
+        </span>
+        <h2 class="text-center text-[30px] text-[#443627]">
+            ចាប់ផ្ដើមការអាន​ និងទទួលយកបទពិសោធន៍ថ្មីៗ
+            <br> ជាមួយសៀវភៅគំនិត
+        </h2>
+        <div class="relative justify-center items-center flex py-5 space-x-5">
+            <input type="text" class="pl-10 pr-4 py-2 w-1xl border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="អុីម៉ែល...">
+            <button class=" px-4 py-2 bg-[#443627] text-[#D98324] hover:bg-amber-900 hover:text-blue-500 rounded-md">
+                <a href="">សាកល្បង</a>
+            </button>
+        </div>
+        <div class="justify-center items-center flex space-x-5">
+            <a href=""><ion-icon name="logo-twitter" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-facebook" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-instagram" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-youtube" class="w-[40px] h-[40px]"></ion-icon></a>
+        </div>
+        <div class="p-5">
+            <ul class="flex justify-center items-center space-x-5">
+                <li><a href="">ទំព័រដើម</a></li>
+                <li><a href="">សៀវភៅ</a></li>
+                <li><a href="">អ្នកនិពន្ធ</a></li>
+                <li><a href="">ព័ត៌មានបន្ថែម</a></li>
+                <li><a href="">អំពីយើង</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
