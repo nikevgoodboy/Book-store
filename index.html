@@ -16,8 +16,77 @@
     </style>
   </head>
   <body>
+    <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+      <div class="flex justify-between items-center">
+        <span class="text-2xl font-[Poppins] cursor-pointer">
+          <img class="h-10 inline" src="src/assets/logo.png" alt="" />
+          សៀវភៅគំនិត
+        </span>
+
+        <span
+          class="text-3xl cursor-pointer mx-2 md:hidden block"
+          onclick="Menu(this)"
+        >
+          <ion-icon name="menu-outline"></ion-icon>
+        </span>
+      </div>
+
+      <div>
+        <ul
+          id="menu-list"
+          class="md:flex md:items-center z-50 md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 opacity-0 md:opacity-100 top-[-400px] transition-all ease-in duration-500 bg-white md:bg-transparent"
+        >
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-cyan-500 duration-500" href="#"
+              >ទំព័រដើម</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-cyan-500 duration-500" href="#"
+              >សៀវភៅ</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-cyan-500 duration-500" href="#"
+              >អ្នកនិពន្ធ</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-cyan-500 duration-500" href="#"
+              >ព័ត៌មានបន្ថែម</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-cyan-500 duration-500" href="#"
+              >អំពីយើង</a
+            >
+          </li>
+
+          <button
+            class="bg-[#443627] text-white duration-500 px-6 py-2 mx-4 hover:bg-amber-700 rounded-lg"
+          >
+            <a class="text-[#D98324]" href="#">ទំនាក់ទំនង</a>
+          </button>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      function Menu(icon) {
+        let list = document.getElementById("menu-list");
+        if (list.classList.contains("top-[-400px]")) {
+          list.classList.replace("top-[-400px]", "top-[80px]");
+          list.classList.replace("opacity-0", "opacity-100");
+          icon.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
+        } else {
+          list.classList.replace("top-[80px]", "top-[-400px]");
+          list.classList.replace("opacity-100", "opacity-0");
+          icon.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
+        }
+      }
+    </script>
     <h1
-      class="text-[#443627] font-bold flex justify-center text md:text-5xl text-3xl"
+      class="text-[#443627] font-bold flex justify-center text md:text-5xl text-3xl mt-10"
     >
       អ្នកនិពន្ធរចនាឡើងសម្រាប់អ្នកចូលចិត្តអាន
     </h1>
@@ -148,10 +217,397 @@
         </div>
       </div>
     </div>
-    <div class="bg-[#F2F0F0]">
-      <h1 class="text-[#443627] font-bold text md:text-4xl text-2xl p-12 ms-10">
+    <div class="w-full bg-[#F2F0F0]">
+      <h4 class="text-[#443627] font-bold text md:text-4xl text-2xl p-12 ms-10">
         សៀវភៅចេញផ្សាយថ្មី
-      </h1>
+      </h4>
+      <div class="flex justify-center flex-wrap gap-12">
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+              class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+            >
+              <img
+                class="object-contain w-fit h-fit hover:opacity-75"
+                src="src/assets/purple book.jpg"
+              />
+            </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href=""> កំណត់ហេតុពណ៌ស្វាយ </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+              class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+            >
+              <img
+                class="object-contain w-fit h-fit hover:opacity-75"
+                src="src/assets/ថ្ងៃថ្មីនៅតែមាន.png"
+              />
+            </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href=""> ថ្ងៃថ្មីនៅតែមាន</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+              class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+            >
+              <img
+                class="object-contain w-fit h-fit hover:opacity-75"
+                src="src/assets/និស្ស័យ.png"
+              />
+            </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href="">និស្ស័យ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+              class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+            >
+              <img
+                class="object-contain w-fit h-fit hover:opacity-75"
+                src="src/assets/ដំណើរ.png"
+              />
+            </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href=""> ដំណើរ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full">
+      <h4 class="text-[#443627] font-bold text md:text-4xl text-2xl p-12 ms-10">
+        សៀវភៅលក់ដាច់ជាងគេ
+      </h4>
+      <div class="flex justify-center flex-wrap gap-12">
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+              class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+            >
+              <img
+                class="object-contain w-fit h-fit hover:opacity-75"
+                src="src/assets/កូនស្រី.png"
+              />
+            </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href="">កូនស្រី</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+              class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+            >
+              <img
+                class="object-contain w-fit h-fit hover:opacity-75"
+                src="src/assets/purple book.jpg"
+              />
+            </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href="">កំណត់ហេតុពណ៌ស្វាយ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+              class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+            >
+              <img
+                class="object-contain w-fit h-fit hover:opacity-75"
+                src="src/assets/អាថ៏កំបាំងថ្នាក់ខ៨.png"
+              />
+            </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href="">អាថ៏កំបាំងថ្នាក់ខ៨</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+              class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+            >
+              <img
+                class="object-contain w-fit h-fit hover:opacity-75"
+                src="src/assets/អន្យតិរ្ថិយ.png"
+              />
+            </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href="">អន្យតិរ្ថិយ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full bg-[#F2F0F0]">
+      <h4 class="text-[#443627] font-bold text md:text-4xl text-2xl p-12 ms-10">
+        សៀវភៅល្បីប្រចាំឆ្នាំ
+      </h4>
+      <div class="flex justify-center flex-wrap gap-12">
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+              class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+            >
+              <img
+                class="object-contain w-fit h-fit hover:opacity-75"
+                src="src/assets/ផ្ការីកនាយសមុទ្រ.png"
+              />
+            </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href="">ផ្ការីកនាយសមុទ្រ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+            class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+          >
+            <img
+              class="object-contain w-fit h-fit hover:opacity-75"
+              src="src/assets/ទីបញ្ចប់នៃយើងទាំងពីរ.png"
+            />
+          </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href="">ទីបញ្ចប់នៃយើងទាំងពីរ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+            class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+          >
+            <img
+              class="object-contain w-fit h-fit hover:opacity-75"
+              src="src/assets/ស្នេហ៍ក្នុងអណ្ដាតភ្លើង.png"
+            />
+          </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+               <a href=""> ស្នេហ៍ក្នុងអណ្ដាតភ្លើង</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex"
+        >
+          <a href="">
+            <div
+            class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden"
+          >
+            <img
+              class="object-contain w-fit h-fit hover:opacity-75"
+              src="src/assets/បុរសឈុតពណ៌ស ភាគ២.png"
+            />
+          </div>
+          </a>
+
+          <div
+            class="w-[230px] h-[70px] -mt-5 flex items-center justify-center"
+          >
+            <div class="w-full h-full flex justify-center items-center">
+              <div
+                class="text-center text-black text-2xl font-medium hover:text-[#d98324] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+              >
+                <a href="">បុរសឈុតពណ៌ស ភាគ២</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full">
+      <h4 class="text-[#443627] font-bold text md:text-4xl text-2xl p-12 ms-10">
+        ជួបជាមួយនឹងអ្នកនិពន្ធ
+      </h4>
+      <div class="flex justify-center flex-wrap gap-12">
+        <div
+          class="w-[230px] h-[230px] flex-col justify-start items-center gap-6 inline-flex"
+        >
+          <img
+            class="self-stretch h-[230px] rounded-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"
+            src="src/assets/Authors-2.png"
+          />
+          <div
+            class="self-stretch h-6 text-center text-black text-[32px] font-bold font-['Noto Sans Khmer'] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+          >
+            ម៉ៅ ចាន់រស្មី
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[230px] flex-col justify-start items-center gap-6 inline-flex"
+        >
+          <img
+            class="self-stretch h-[230px] rounded-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"
+            src="src/assets/Authors-3.png"
+          />
+          <div
+            class="self-stretch h-6 text-center text-black text-[32px] font-bold font-['Noto Sans Khmer'] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+          >
+            ម៉ៅ សំណាង
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[230px] flex-col justify-start items-center gap-6 inline-flex"
+        >
+          <img
+            class="self-stretch h-[230px] rounded-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"
+            src="src/assets/Authors-1.png"
+          />
+          <div
+            class="self-stretch h-6 text-center text-black text-[32px] font-bold font-['Noto Sans Khmer'] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+          >
+            ថុន ថាវរី
+          </div>
+        </div>
+        <div
+          class="w-[230px] h-[230px] flex-col justify-start items-center gap-6 inline-flex"
+        >
+          <img
+            class="self-stretch h-[230px] rounded-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"
+            src="src/assets/Authors-6.png"
+          />
+          <div
+            class="self-stretch h-6 text-center text-black text-[32px] font-bold font-['Noto Sans Khmer'] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]"
+          >
+            អ៊ុច ថាវី
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
