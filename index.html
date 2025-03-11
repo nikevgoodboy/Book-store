@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="src/output.css" />
+    <link rel="stylesheet" href="src/output.css" /> 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Noto Sans Khmer"
       rel="stylesheet"
@@ -16,8 +18,60 @@
     </style>
   </head>
   <body>
+    <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+      <div class="flex justify-between items-center">
+          <span class="text-2xl font-[Poppins] cursor-pointer">
+              <img class="h-10 inline" src="../assets/logo.png" alt="">
+              សៀវភៅគំនិត
+          </span>
+  
+          <span class="text-3xl cursor-pointer mx-2 md:hidden block" onclick="Menu(this)">
+              <ion-icon name="menu-outline"></ion-icon>
+          </span>
+      </div>
+  
+      <div>
+          <ul id="menu-list" class="md:flex md:items-center z-50 md:z-auto md:static absolute w-full left-0
+          md:w-auto md:py-0 py-4 md:pl-0 pl-7 opacity-0 md:opacity-100 top-[-400px] transition-all ease-in duration-500 bg-white md:bg-transparent">
+              <li class="mx-4 my-5 md:my-0">
+                  <a class="text-xl hover:text-cyan-500 duration-500" href="#">ទំព័រដើម</a>
+              </li>
+              <li class="mx-4 my-5 md:my-0">
+                  <a class="text-xl hover:text-cyan-500 duration-500" href="src/pages/books.html">សៀវភៅ</a>
+              </li>
+              <li class="mx-4 my-5 md:my-0">
+                  <a class="text-xl hover:text-cyan-500 duration-500" href="src/pages/authors.html">អ្នកនិពន្ធ</a>
+              </li>
+              <li class="mx-4 my-5 md:my-0">
+                  <a class="text-xl hover:text-cyan-500 duration-500" href="src/pages/blog.html">ព័ត៌មានបន្ថែម</a>
+              </li>
+              <li class="mx-4 my-5 md:my-0">
+                  <a class="text-xl hover:text-cyan-500 duration-500" href="src/pages/about.html">អំពីយើង</a>
+              </li>
+  
+              <button class="bg-[#443627] text-white duration-500 px-6 py-2 mx-4 hover:bg-amber-700 rounded-lg">
+                  <a class="text-[#D98324]" href="#">ទំនាក់ទំនង</a>
+              </button>
+          </ul>
+      </div>
+  </nav>
+  
+  <script>
+      function Menu(icon) {
+          let list = document.getElementById("menu-list");
+          if (list.classList.contains("top-[-400px]")) {
+              list.classList.replace("top-[-400px]", "top-[80px]");
+              list.classList.replace("opacity-0", "opacity-100");
+              icon.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
+          } else {
+              list.classList.replace("top-[80px]", "top-[-400px]");
+              list.classList.replace("opacity-100", "opacity-0");
+              icon.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
+          }
+      }
+  </script>
     <h1
-      class="text-[#443627] font-bold flex justify-center text md:text-5xl text-3xl"
+      class="text-[#443627] mt-10 font-bold flex justify-center text md:text-5xl text-3xl"
     >
       អ្នកនិពន្ធរចនាឡើងសម្រាប់អ្នកចូលចិត្តអាន
     </h1>
