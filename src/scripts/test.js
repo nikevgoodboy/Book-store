@@ -1,38 +1,38 @@
+function searchBooksByAuthor() {
+    const author = document.getElementById("authorInput").value;
+    if (!author) {
+        alert("Please enter an author's name!");
+        return;
+    }
 
-// Function to check if an element is in the viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${encodeURIComponent(author)}`)
+        .then(response => response.json())
+        .then(data => {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = ""; // Clear previous results
+
+            if (!data.items) {
+                resultsDiv.innerHTML = "<p>No books found for this author.</p>";
+                return;
+            }
+
+            data.items.forEach(book => {
+                const title = book.volumeInfo.title || "No Title";
+                const authors = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Unknown Author";
+                const thumbnail = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://via.placeholder.com/100";
+                const description = book.volumeInfo.description ? book.volumeInfo.description.substring(0, 100) + "..." : "No description available.";
+
+                const bookDiv = document.createElement("div");
+                bookDiv.classList.add("book");
+                bookDiv.innerHTML = `
+                    <img src="${thumbnail}" alt="Book Cover">
+                    <h3>${title}</h3>
+                    <p><strong>Author(s):</strong> ${authors}</p>
+                    <p>${description}</p>
+                `;
+
+                resultsDiv.appendChild(bookDiv);
+            });
+        })
+        .catch(error => console.error("Error fetching books:", error));
 }
-
-// Function to animate the counter
-function animateCounter(counterElement) {
-    const target = parseInt(counterElement.getAttribute('data-target')); // Get target number
-    let current = 0;
-    const increment = target / 100; // Speed of counting (higher values are slower)
-
-    // Increment the number
-    const interval = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(interval); // Stop once the target is reached
-        }
-        counterElement.textContent = Math.floor(current) + "+"; // Update the displayed number
-    }, 30); // Adjust the time (lower values = faster)
-}
-
-// Function to check and run animation for all counters
-function checkCounters() {
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach((counter) => {
-        if (isInViewport(counter) && !counter.classList.contains('animated')) {
-            animateCounter(counter);
-            counter.classList.add('animated'); // Prevent animation from running multiple times
-        }
-    });
-}
-
-// Run on page load and every scroll
-window.addEventListener('scroll', checkCounters);
-window.addEventListener('load', checkCounters);
