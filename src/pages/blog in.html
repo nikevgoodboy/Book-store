@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto Sans Khmer"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Noto Sans Khmer";
+      }
+    </style>
+    <title>blog in</title>
+  </head>
+  <body>
+    <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+      <div class="flex justify-between items-center">
+        <span class="text-2xl font-[Poppins] cursor-pointer">
+          <img class="h-10 inline" src="../assets/logo.png" alt="" />
+          សៀវភៅគំនិត
+        </span>
+
+        <span
+          class="text-3xl cursor-pointer mx-2 md:hidden block"
+          onclick="Menu(this)"
+        >
+          <ion-icon name="menu-outline"></ion-icon>
+        </span>
+      </div>
+
+      <div>
+        <ul
+          id="menu-list"
+          class="md:flex md:items-center z-50 md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 opacity-0 md:opacity-100 top-[-400px] transition-all ease-in duration-500 bg-white md:bg-transparent"
+        >
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >ទំព័រដើម</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >សៀវភៅ</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >អ្នកនិពន្ធ</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >ព័ត៌មានបន្ថែម</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >អំពីយើង</a
+            >
+          </li>
+
+          <button
+            class="bg-[#443627] text-white duration-500 px-6 py-2 mx-4 hover:bg-amber-700 rounded-lg"
+          >
+            <a class="text-[#D98324]" href="#">ទំនាក់ទំនង</a>
+          </button>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      function Menu(icon) {
+        let list = document.getElementById("menu-list");
+        if (list.classList.contains("top-[-400px]")) {
+          list.classList.replace("top-[-400px]", "top-[80px]");
+          list.classList.replace("opacity-0", "opacity-100");
+          icon.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
+        } else {
+          list.classList.replace("top-[80px]", "top-[-400px]");
+          list.classList.replace("opacity-100", "opacity-0");
+          icon.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
+        }
+      }
+    </script>
+    <div
+      class="w-full h-screen flex justify-center items-center bg-cover bg-center"
+      style="
+        background-image: url('https://cdn.prod.website-files.com/617235cde0463e5aa8d3dc95/669c83b5c3e28b5b569bf04c_flame.png');
+      "
+    >
+      <div
+        class="w-[500px] h-20 bg-white bg-opacity-50 border-4 border-[#443627] text-[#443627] text-center rounded-lg"
+      >
+        <h1 class="text-3xl font-bold mt-5">ស្លាកស្នាមអតីត</h1>
+      </div>
+    </div>
+    <div class="w-full h-auto mt-12">
+      <h1 class="text-3xl font-bold text-[#D98324] px-32">ម៉ៅ សំណាង</h1>
+      <h4 class="text-2xl text-[#D98324] px-32 py-5">Oct 9, 2022</h4>
+    </div>
+    <div class="mt-10">
+      <p class="px-32 text-xl">
+        សំណាត់តូចៗអណ្តែតលើផ្ទៃទឹក ប្រៀបដូចជាជីវិតឥតគោលដៅ។
+        ចរណៃសោភាស្លៀកពាក់ជាសិស្សសាលា បង្ហាញលក្ខណៈរាបសារបំផុត
+        ស្រីទ្រោបមុខលើស្ពានថ្មយំខ្សឹកខ្សួល៖ <br />
+        <br />
+        - ម៉ាក់កុហកកូន! ម៉ាក់ធ្វើអ្វីខ្លះដើម្បីរស់? ទោះជាលក់ត្រកួនតាមផ្សារ
+        ក៏ចរណៃមិនខ្លាចនឹងរស់ដោយថ្លៃថ្នូរក្នុងភាពក្រីក្រដែរ
+        ប្រសើរជាងទឹកប្រាក់ដែលធ្លាក់ថោកទាបរស់ក្នុងសង្គមខ្មែរ!
+        ជីវិតរបស់ម៉ាក់ថោកទាបខ្លាំងណាស់ ខ្ញុំមិនត្រូវការប្រាក់របស់ម៉ាក់ទៀតទេ!
+        មិនត្រូវការទេ! <br /> <br>
+        អ្នកស្រីខាំបបូរមាត់ស្ទើរបែកឈាម៖ <br /> <br>
+        - ចរណៃ? <br /> <br>
+        - កូននិយាយខុសឬ? ឡានថ្មី ពេជ្រ ទិញកិត្តិយសអស់ បើសិនជាគេគ្រប់គ្នាដឹង
+        គ្មានអ្នកណាគេមើលមុខកូនទៀតទេ ហើយអ្វីដេលយើងប្រព្រឹត្តយូរនិងឆាប់គង់តែគេដឹង!
+        ម៉ាក់មានកូនស្រីមិនមែនប្រុសទេ! បើម៉ាក់ស្រឡាញ់កូន
+        មិនមែនម៉ាក់ធ្វើបែបហ្នឹងទេ! ខំចិញ្ចឹមកូនធ្វើអី? ដើម្បីអ្វី?
+        បើជៀសសម្តីថោកទាបមិនរួចនោះ! <br /> <br>
+        អ្នកស្រីចរិយាខ្ទប់មុខយំ ពោលដោយក្ដីឈឺចាប់៖ <br /> <br>
+        - ចរណៃ! កូនពុំទាន់យល់ចិត្តមាតាក្នុងលោកនេះទេ! បើលាក់មិនជិត
+        ម្តាយប្រាប់កូនចុះ! កុំថ្កោលទោសម៉ាក់ថាជាស្រីភ្លើតភ្លើនអី!
+        ម្តាយជាកូនកំព្រារស់នៅជាមួយម្តាយមីងនៅភូមិអូរតាគី! ជាក្រមុំជនបទក្មេងខ្ចី
+        ហើយស្លូតត្រង់ណាស់ ពេលម៉ាក់ពេញវ័យអាយុ១៥ឆ្នាំ
+        ត្រូវសាច់ថ្លៃចិត្តមិនត្រង់ប្រាថ្នារំលោភលើម៉ាក់ ពេលនោះម៉ាក់គេចខ្លួន
+        ប្តីប្រពន្ធគាត់ឈ្លោះគ្នា រាលដាលរហូតដល់បណ្តេញម៉ាក់ចេញទៀត ពេលអស់សង្ឃឹមនោះ
+        ចក្រាកំលោះទីក្រុងម្នាក់ដែលតាមស្រឡាញ់ម៉ាក់
+        ពេលមានបុណ្យភូមិជាច្រើនថ្ងៃហើយនោះ តាមលួងលោមយកស្នេហាស្មោះរបស់ម៉ាក់ពិត
+        អភ័ព្វប៉ះលើព្រាននារី! ការពិតគេមានប្រពន្ធរួចទៅហើយ!
+        ពេលម្តាយទម្ងន់កូនបាន៣ខែ ប្រពន្ធដើមរបស់គេដឹង នាំគ្នាវាយដំធ្វើបាបម្តាយ!
+        ចក្រាគេចបាត់ព្រោះខ្លាចប្រពន្ធរបស់គេ នាងនោះកាចផុតលេខ
+        ម្តាយត្រូវគេវាយសន្លប់ដូចសត្វធាតុ ជីវិតជាក្ដីឈឺចាប់ខ្លោចផ្សា
+        ម៉ាក់ក៏គេចលែងឱ្យជួបចក្រាទៀត! <br /> <br>
+        កម្មណាស់មកដល់បេនឡាន ប្រទះនឹងពួកអ្នកលេង ចាប់ស្រីយកទៅលក់
+        ម៉ាក់ធ្លាក់ខ្លួនក្នុងរង្គសាលជៀសមិនរួច!
+        ម៉ាក់រកប្រាក់សងគេមិនចេះអស់ក្នុងមួយជីវិតងងឹតគ្មានពន្លឺទាល់តែសោះ
+        ទោះរត់ក៏មិនរួចពួកថៅកែបារចិត្តខ្មៅវាយដំបង្ខំឱ្យម៉ាក់ពន្លូតកូនចេញ
+        ដើម្បីទុកពេលរកប្រាក់ឱ្យគេ ដើម្បីកូន ម៉ាក់អង្វរសុំទុកកូនឱ្យកើត
+        ដោយចុះខសន្យាថា រកប្រាក់ឱ្យគេ១០ឆ្នាំ ដោយគ្មានយក១រៀលទេ ទើបគេព្រម!
+        ចរណៃកូនស្អប់ម៉ាក់ចុះ ម៉ាក់ជាស្រីអាក្រក់ណាស់
+        ព្រោះម៉ាក់គ្មានឱកាសនឹងផ្តល់សេចក្ដីសុខឱ្យកូនដូចគេដទៃទេ!
+        ក្រោយពីរយៈពេល១០ឆ្នាំ ម៉ាក់ត្រូវការប្រាក់ឱ្យកូនរៀនសូត្រនឹងគេ!
+        ម៉ាក់ត្រូវខ្ចីលុយថៅកែ ហើយត្រូវសងគេគ្មានថ្ងៃចប់!
+        ហ្នឹងហើយទឹកភ្នែកស្រីផ្កាមាសណា៎កូន! <br /> <br>
+
+        ចរណៃស្លុតស្លុងអស់វិញ្ញាណ ម៉ាក់អភ័ព្វណាស់។ មែន! ខ្លួននាងក៏ជួបប្រទះហើយ
+        ស្រីស្អាតក្រខ្សត់ជាចំណីតណ្ហារបស់ប្រុសទឹកប្រាក់ពិតណាស់ ឆោមល្អឱបម្តាយ
+        យំខ្សឹកខ្សួល៖ <br />
+        - ម៉ាក់! ម៉ាក់របស់កូន! <br />
+        - ចរណៃកូន! <br />
+        ម្តាយនិងកូនឱបគ្នាយំលើស្ពាន។
+      </p>
+    </div>
+    <footer class="bg-[#F2F6D0] mt-10">
+      <span
+        class="text-2xl font-[Poppins] cursor-pointer justify-center items-center flex py-2"
+      >
+        <img class="h-10 inline" src="../assets/logo.png" alt="" />
+        សៀវភៅគំនិត
+      </span>
+      <h2 class="text-center text-[30px] text-[#443627]">
+        ចាប់ផ្ដើមការអាន​ និងទទួលយកបទពិសោធន៍ថ្មីៗ
+        <br />
+        ជាមួយសៀវភៅគំនិត
+      </h2>
+      <div class="relative justify-center items-center flex py-5 space-x-5">
+        <input
+          type="text"
+          class="pl-10 pr-4 py-2 w-1xl border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="អុីម៉ែល..."
+        />
+        <ion-icon name="person-outline" class="absolute left-117"></ion-icon>
+        <button
+          class="px-4 py-2 bg-[#443627] text-[#D98324] hover:bg-amber-900 hover:text-blue-500 rounded-md"
+        >
+          <a href="">សាកល្បង</a>
+        </button>
+      </div>
+      <div class="justify-center items-center flex space-x-5">
+        <a href=""
+          ><ion-icon name="logo-twitter" class="w-[40px] h-[40px]"></ion-icon
+        ></a>
+        <a href=""
+          ><ion-icon name="logo-facebook" class="w-[40px] h-[40px]"></ion-icon
+        ></a>
+        <a href=""
+          ><ion-icon name="logo-instagram" class="w-[40px] h-[40px]"></ion-icon
+        ></a>
+        <a href=""
+          ><ion-icon name="logo-youtube" class="w-[40px] h-[40px]"></ion-icon
+        ></a>
+      </div>
+      <div class="p-5">
+        <ul class="flex justify-center items-center space-x-5">
+          <li><a href="">ទំព័រដើម</a></li>
+          <li><a href="">សៀវភៅ</a></li>
+          <li><a href="">អ្នកនិពន្ធ</a></li>
+          <li><a href="">ព័ត៌មានបន្ថែម</a></li>
+          <li><a href="">អំពីយើង</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
