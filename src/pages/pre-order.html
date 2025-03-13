@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ទំព័រ​ | លើកទឹកចិត្ត</title>
+    <link rel="stylesheet" href="../output.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="">
+    <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+            <span class="text-2xl font-[Poppins] cursor-pointer">
+                <img class="h-10 inline" src="../assets/logo.png" alt="">
+                សៀវភៅគំនិត
+            </span>
+
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+
+        <div>
+            <ul class="md:flex md:items-center z-[-1] md:-z-auto md:static absolute bg-white w-full left-0
+            md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opasity-0 top-[-400px] transition-all ease-in duration-500">
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">ទំព័រដើម</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">សៀវភៅ</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">អ្នកនិពន្ធ</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">ព័ត៌មានបន្ថែម</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">អំពីយើង</a>
+                </li>
+
+                <button class="bg-[#443627]  text-white px-4 py-2 rounded-lg mx-4 hover">
+                    <a class="text-[#D98324]" href="#">ទំនាក់ទំនង</a>
+                </button>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        function Menu(e) {
+            let list=document.querySelector('ul');
+            e.name ===  'menu' ? (e.name = "close",list.classList.add('top-[80px]'),
+            list.classList.add('opacity-100')) : (e.name = "menu",list.classList.remove('top-[80px]'),
+            list.classList.remove('opacity-100'));
+        }
+    </script>
+
+
+    <div class="w-[90%] h-auto bg-[#F2F6D0] ms-[5%] mb-20">
+        <div class="w-full text-center"> 
+            <div class="text-[#443627] text-[24px] font-bold text-center p-8 mt-5 font-[Poppins] sm:text-[36px] md:text-[56px]">ទម្រង់បញ្ជាទិញ</div>
+        </div>
+
+        <div class=" w-full h-[3px] bg-[#d98324] mb-20 -mt-6 sm:-mt-4 md:mt-1 sm:w-[300px] md:w-full"></div>
+
+        <div class="w-[416px] flex flex-col gap-8 ms-5 -mt-5 mb-5 sm:ms-20 sm:-mt-10 sm:mb-10">
+            <!-- Name Section -->
+            <div class="flex flex-wrap justify-center gap-6 -ms-9 sm:ms-0">
+                <!-- First Name -->
+                <div class="flex flex-col">
+                    <label class="text-[#443627] text-xl sm:text-2xl font-bold mb-5">ឈ្មោះ</label>
+                    <input type="text" placeholder="នាមខ្លួន" class="w-[153px] h-[41px] px-3 border border-[#d98324] rounded-[10px] shadow-md focus:outline-none focus:ring-2 focus:ring-[#d98324]">
+                </div>
+                <!-- Last Name -->
+                <div class="flex flex-col">
+                    <label class="text-[#443627] text-xl sm:text-2xl font-bold mb-5">នាមត្រកូល</label>
+                    <input type="text" placeholder="នាមត្រកូល" class="sm:w-[238px] w-[200px] h-[41px] px-3 border border-[#d98324] rounded-[10px] shadow-md focus:outline-none focus:ring-2 focus:ring-[#d98324]">
+                </div>
+            </div>
+        
+            <!-- Phone Number -->
+            <div class="flex flex-col">
+                <label class="text-[#443627] text-xl sm:text-2xl font-bold mb-5">លេខទូរស័ព្ទ</label>
+                <input type="tel" placeholder="012345678" class="w-[280px] h-10 px-3 border border-[#d98324] rounded-[10px] shadow-md focus:outline-none focus:ring-2 focus:ring-[#d98324]">
+            </div>
+        
+            <!-- Email -->
+            <div class="flex flex-col">
+                <label class="text-[#443627] text-xl sm:text-2xl font-bold mb-5">អុីម៉ែល</label>
+                <input type="email" placeholder="example@email.com" class="w-[280px] h-10 px-3 border border-[#d98324] rounded-[10px] shadow-md focus:outline-none focus:ring-2 focus:ring-[#d98324]">
+            </div>
+
+            <div class="relative justify-center text-[#443627] sm:text-2xl text-xl font-bold">សៀវភៅផ្សេងៗ</div>
+
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img9.png" />
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">ប្រលោមចិត្តភាគ ១</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">28,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">28,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </div>
+
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img10.png" />
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">ប្រលោមចិត្តភាគ ២</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">30,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">30,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </div>
+            
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img14.png" />
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">នភាល័យ ភាគ៣</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">30,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">30,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </div>
+            
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img15.png" />
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">នភាល័យ ភាគ២</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">30,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">30,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </div>
+
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img8.png" />
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">នភាល័យ ភាគ១</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">30,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">30,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+            </div>
+
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img17.png" />
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">កាពីទែនជីវិតភាគ ១</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">28,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">28,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+            </div>
+
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img18.png" />
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">កាពីទែនជីវិតភាគ ២</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">28,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">28,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+            </div>
+
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img23.png" />
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">អាថ៏កំបាំងថ្នាក់ខ៨</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">40,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">40,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+            </div>
+
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img20.png" />
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">និស្ស័យ</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">32,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">32,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+            </div>
+
+            <div class="sm:w-[740px] w-[350px] sm:h-[200px] h-[120px] rounded-[10px] flex justify-start  hover:bg-[#EFDCAB]">
+                <div class="sm:w-[15%] w-[20%] h-auto">
+                    <img class="sm:w-[80px] w-[40px] h-[60px] sm:h-[120px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] ms-5 mt-5" src="../assets/bookpage-img19.png" />
+                </div>
+
+                <div class="flex flex-col mb-5">
+                    <div class="sm:w-[85%] w-[80%] mt-5 h-[50%] flex space-x-3 p-2">
+                        <input type="checkbox" class="sm:w-5 sm:h-5 w-4 h-4 rounded-[1px] border-black -mt-2 sm:-mt-3">
+                        <div class="flex flex-col">
+                            <div class="sm:w-[300px] w-[150px] ">
+                                <p class="text-[#d98324] sm:text-2xl text-[16px] font-medium -mt-3 sm:-mt-5">បាត់បង់តែមិនបោះបង</p>
+                            </div>
+                            <div class="w-[118px] justify-start text-[#443627] text-[14px] sm:text-xl font-medium ">32,000 KHR</div>
+                        </div>
+                    </div>
+
+                    <div class=" flex flex-row gap-2 justify-start text-black text-xl font-medium sm:ms-2.5">
+
+                        <div class=" flex flex-col text-[16px] sm:text-xl ms-2">
+                            <div>
+                                <p>ចំនួន</p>
+                            </div>
+                            <div class="w-[88px] justify-start text-[#d98324] text-base font-medium font-['Noto_Sans_Khmer']">32,000 KHR</div>
+                        </div>
+
+                        <div>
+                            <select class="sm:w-10 w-10 sm:h-5 h-5 border border-gray-400 rounded-md px-2 text-lg focus:outline-none -ms-13  sm:-ms-10 focus:ring-2 focus:border-[#443627]">
+                                <option value="1"><p class=" text-[10px] sm:text-xl">1</p></option>
+                                <option value="2"><p class=" text-[10px] sm:text-xl">2</p></option>
+                                <option value="3"><p class=" text-[10px] sm:text-xl">3</p></option>
+                                <option value="4"><p class=" text-[10px] sm:text-xl">4</p></option>
+                                <option value="5"><p class=" text-[10px] sm:text-xl">5</p></option>
+                                <option value="6"><p class=" text-[10px] sm:text-xl">6</p></option>
+                                <option value="7"><p class=" text-[10px] sm:text-xl">7</p></option>
+                                <option value="8"><p class=" text-[10px] sm:text-xl">8</p></option>
+                                <option value="9"><p class=" text-[10px] sm:text-xl">9</p></option>
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+            </div>
+            
+
+        </div>
+        
+
+    </div>
+
+
+    <footer class="bg-[#F2F6D0]">
+        <span class="text-2xl font-[Poppins] cursor-pointer justify-center items-center flex py-2">
+            <img class="h-10 inline" src="../assets/logo.png" alt="">
+            សៀវភៅគំនិត
+        </span>
+        <h2 class="text-center text-[30px] text-[#443627]">
+            ចាប់ផ្ដើមការអាន​ និងទទួលយកបទពិសោធន៍ថ្មីៗ
+            <br> ជាមួយសៀវភៅគំនិត
+        </h2>
+        <div class="relative justify-center items-center flex py-5 space-x-5">
+            <input type="text" class="pl-10 pr-4 py-2 w-1xl border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="អុីម៉ែល...">
+            <ion-icon name="person-outline" class="absolute left-117"></ion-icon>
+            <button class=" px-4 py-2 bg-[#443627] text-[#D98324] hover:bg-amber-900 hover:text-blue-500 rounded-md">
+                <a href="">សាកល្បង</a>
+            </button>
+        </div>
+        <div class="justify-center items-center flex space-x-5">
+            <a href=""><ion-icon name="logo-twitter" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-facebook" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-instagram" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-youtube" class="w-[40px] h-[40px]"></ion-icon></a>
+        </div>
+        <div class="p-5">
+            <ul class="flex justify-center items-center space-x-5">
+                <li><a href="">ទំព័រដើម</a></li>
+                <li><a href="">សៀវភៅ</a></li>
+                <li><a href="">អ្នកនិពន្ធ</a></li>
+                <li><a href="">ព័ត៌មានបន្ថែម</a></li>
+                <li><a href="">អំពីយើង</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+</body>
+</html>

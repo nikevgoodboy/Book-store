@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ទំព័រ​ | ស៊ើបអង្កេត</title>
+    <link rel="stylesheet" href="../output.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="">
+    <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+            <span class="text-2xl font-[Poppins] cursor-pointer">
+                <img class="h-10 inline" src="../assets/logo.png" alt="">
+                សៀវភៅគំនិត
+            </span>
+
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+
+        <div>
+            <ul class="md:flex md:items-center z-[-1] md:-z-auto md:static absolute bg-white w-full left-0
+            md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opasity-0 top-[-400px] transition-all ease-in duration-500">
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">ទំព័រដើម</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">សៀវភៅ</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">អ្នកនិពន្ធ</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">ព័ត៌មានបន្ថែម</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">អំពីយើង</a>
+                </li>
+
+                <button class="bg-[#443627]  text-white px-4 py-2 rounded-lg mx-4 hover">
+                    <a class="text-[#D98324]" href="#">ទំនាក់ទំនង</a>
+                </button>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        function Menu(e) {
+            let list=document.querySelector('ul');
+            e.name ===  'menu' ? (e.name = "close",list.classList.add('top-[80px]'),
+            list.classList.add('opacity-100')) : (e.name = "menu",list.classList.remove('top-[80px]'),
+            list.classList.remove('opacity-100'));
+        }
+    </script>
+
+    <div class="text-[#443627] text-[24px] font-bold text-center p-8 mt-5 font-[Poppins] sm:text-[36px] md:text-[56px]">សៀវភៅទាំងអស់​ ដែលយើងខ្ញុំមាន</div>
+    <div class="flex justify-center ">
+        <div class=" w-[200px] h-[9px] bg-[#d98324] mb-20 -mt-6 sm:-mt-4 md:mt-1 sm:w-[300px] md:w-[600px]"></div>
+    </div>
+
+    <div class="flex justify-center mb-16">
+        <div class="w-full max-w-[1200px] h-[126px] relative border-b-4 border-[#d98324] ">
+            <div class="left-[20px] top-[50px] absolute justify-start items-center gap-9 inline-flex flex-wrap">
+                <div class="w-full sm:w-[250px] h-[70px] px-10 -pb-8 justify-center items-center gap-2.5 flex overflow-hidden">
+                    <div class="text-[#443627] text-2xl font-bold">
+                        <a href="" class="hover:text-[#d98324]">សៀវភៅ</a>
+                    </div>
+                </div>
+                <div class="w-full sm:w-[250px] h-[70px] px-10 justify-center items-center gap-2.5 flex overflow-hidden">
+                    <div class="text-[#443627] text-2xl font-bold">
+                        <a href="" class="hover:text-[#d98324]">ប្រលោមលោក</a>
+                    </div>
+                </div>
+                <div class="w-full sm:w-[250px] h-[70px] px-10 justify-center items-center gap-2.5 flex overflow-hidden">
+                    <div class="text-[#443627] text-2xl font-bold">
+                        <a href="" class="hover:text-[#d98324]">លើកទឹកចិត្ត</a>
+                    </div>
+                </div>
+                <div class="w-full sm:w-[250px] h-[70px] px-10 justify-center items-center gap-2.5 flex overflow-hidden">
+                    <div class="text-[#443627] text-2xl font-bold">
+                        <a href="" class="hover:text-[#d98324] underline">ស៊ើបអង្កេត</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+
+    <div class="w-full h-auto flex justify-center flex-wrap gap-20">
+
+        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
+            <a href="">
+                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden transition-all duration-300 ease-in-out relative">
+                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img21.png" />
+                </div>
+            </a>
+            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
+                <div class="w-full h-full flex justify-center items-center">
+                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
+                        <a href="" class="hover:text-[#d98324]">
+                            អន្យតិរ្ថិយ
+                        </a>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
+            <a href="">
+                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
+                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img22.png" />
+                </div>
+            </a>
+            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
+                <div class="w-full h-full flex justify-center items-center">
+                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
+                        <a href="" class="hover:text-[#d98324]">
+                            ប្រអប់ឈើក្រអូប
+                        </a>                     
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
+            <a href="">
+                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
+                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img23.png" />
+                </div>
+            </a>
+            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
+                <div class="w-full h-full flex justify-center items-center">
+                    <div class="text-center  text-black text-2xl font-medium text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
+                        <a href="" class="hover:text-[#d98324]">
+                            អាថ៏កំបាំងថ្នាក់ខ៨
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
+            <a href="">
+                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
+                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img24.png" />
+                </div>
+            </a>
+            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
+                <div class="w-full h-full flex justify-center items-center">
+                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
+                        <a href="" class="hover:text-[#d98324]">
+                            កូនក្រមុំទី៧
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="w-[85%] h-auto flex justify-items-start ml-[5%]">
+        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
+            <a href="">
+                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
+                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img7.png" />
+                </div>
+            </a>
+            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
+                <div class="w-full h-full flex justify-center items-center">
+                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
+                        <a href="" class="hover:text-[#d98324]">
+                            តាមប្រមាញ់ឧក្រិដ្ឋជន
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#F2F6D0]">
+        <span class="text-2xl font-[Poppins] cursor-pointer justify-center items-center flex py-2">
+            <img class="h-10 inline" src="../assets/logo.png" alt="">
+            សៀវភៅគំនិត
+        </span>
+        <h2 class="text-center text-[30px] text-[#443627]">
+            ចាប់ផ្ដើមការអាន​ និងទទួលយកបទពិសោធន៍ថ្មីៗ
+            <br> ជាមួយសៀវភៅគំនិត
+        </h2>
+        <div class="relative justify-center items-center flex py-5 space-x-5">
+            <input type="text" class="pl-10 pr-4 py-2 w-1xl border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="អុីម៉ែល...">
+            <ion-icon name="person-outline" class="absolute left-117"></ion-icon>
+            <button class=" px-4 py-2 bg-[#443627] text-[#D98324] hover:bg-amber-900 hover:text-blue-500 rounded-md">
+                <a href="">សាកល្បង</a>
+            </button>
+        </div>
+        <div class="justify-center items-center flex space-x-5">
+            <a href=""><ion-icon name="logo-twitter" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-facebook" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-instagram" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-youtube" class="w-[40px] h-[40px]"></ion-icon></a>
+        </div>
+        <div class="p-5">
+            <ul class="flex justify-center items-center space-x-5">
+                <li><a href="">ទំព័រដើម</a></li>
+                <li><a href="">សៀវភៅ</a></li>
+                <li><a href="">អ្នកនិពន្ធ</a></li>
+                <li><a href="">ព័ត៌មានបន្ថែម</a></li>
+                <li><a href="">អំពីយើង</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+</body>
+</html>

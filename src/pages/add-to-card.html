@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ទំព័រ​ | កម្មង់</title>
+    <link rel="stylesheet" href="../output.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="">
+    <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+            <span class="text-2xl font-[Poppins] cursor-pointer">
+                <img class="h-10 inline" src="../assets/logo.png" alt="">
+                សៀវភៅគំនិត
+            </span>
+
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+
+        <div>
+            <ul class="md:flex md:items-center z-[-1] md:-z-auto md:static absolute bg-white w-full left-0
+            md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opasity-0 top-[-400px] transition-all ease-in duration-500">
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">ទំព័រដើម</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">សៀវភៅ</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">អ្នកនិពន្ធ</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">ព័ត៌មានបន្ថែម</a>
+                </li>
+                <li class="mx-4 my-5 md:my-0">
+                    <a class="text-xl hover:text-[#D98324] duration-500" href="#">អំពីយើង</a>
+                </li>
+
+                <button class="bg-[#443627]  text-white px-4 py-2 rounded-lg mx-4 hover">
+                    <a class="text-[#D98324]" href="#">ទំនាក់ទំនង</a>
+                </button>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        function Menu(e) {
+            let list=document.querySelector('ul');
+            e.name ===  'menu' ? (e.name = "close",list.classList.add('top-[80px]'),
+            list.classList.add('opacity-100')) : (e.name = "menu",list.classList.remove('top-[80px]'),
+            list.classList.remove('opacity-100'));
+        }
+    </script>
+
+    <div class="container w-full h-auto">
+        <div class="text-[#443627] text-[24px] font-bold text-center p-8 mt-10 font-[Poppins] sm:text-[36px] md:text-[56px]">កំណត់ហេតុពណ៌ស្វាយ ភាគ២</div>
+
+    <div class="w-full h-[600px] mb-10 bg-[#F2F6D0] flex justify-between">
+         <div class="w-[40%] h-full flex justify-center">
+            <img src="../assets/purple book.jpg" alt="img" class="h-[80%] mt-[10%] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)]">
+         </div>
+         <div class="w-[60%] h-full flex justify-center flex-wrap">
+            <div class="w-[40%] h-[60%] mt-[7%]">
+                <h4 class="text-3xl font-bold mb-4 text-[#443627]">ប្រភេទ៖</h4>
+                <h4 class="text-3xl font-bold mb-4 text-[#443627]">តម្លៃ USD៖</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">តម្លៃ KHR៖</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">ចំនួនទំព័រ៖</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">អ្នកនិពន្ធ៖</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">ថ្ងៃចេញផ្សាយ៖</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">បោះពុម្ពលើកទី៖</h4>
+            </div>
+            <div class="w-[60%] h-[60%] mt-[7%]">
+                <h4 class="text-3xl font-bold mb-4 text-[#443627]">ប្រលោមលោក</h4>
+                <h4 class="text-3xl font-bold mb-4 text-[#443627]">$ 7.50</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">30,000 KHR</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">258</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">ម៉ៅ ចាន់រស្មី</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">Apr 2021</h4>
+                <h4 class="text-3xl font-bold mb-4  text-[#443627]">1st</h4>
+            </div>
+            <div class="w-[50%] -mt-20 -ms-40 h-[10%]">
+                <button class="bg-[#443627] w-60 h-14  text-white px-4 py-2 rounded-lg mx-4 hover">
+                    <a class="text-[#D98324] text-2xl" href="#">បញ្ជាទិញឥឡូវនេះ</a>
+                </button>
+            </div>
+         </div>
+    </div> 
+
+
+    <div class="w-full flex justify-center">
+        <div class="w-[85%] h-auto mb-10">
+            <p class="text-2xl">
+                គូស្នេហ៍ស្ម័គ្រស្មោះមួយគូបានត្រលប់មកជួបគ្នាម្តងទៀតដោយសារកម្លាំងអធិដ្ឋាន  តែទីបំផុតពួកគេក៏ត្រូវបែកគ្នា ដោយសារតែកម្លាំងអធិដ្ឋាននោះដែរ។
+            </p><br>
+            <p class="text-2xl">ពាក្យសន្យាដោយតំណក់លោហិតក្នុងអតីតជាតិត្រូវការប្តូរដោយពាក្យសច្ចៈក្នុងជាតិថ្មី។</p><br>
+            <p class="text-2xl">គ្រប់យ៉ាងជាការកំណត់ទុកនៃជោគវាសនា  ប៉ុន្តែនៅមានសៀវភៅកំណត់ហេតុមួយក្បាលទៀតដែល លីឡាមិនទាន់បានអាន  ហើយដំណោះស្រាយជីវិតនៅទីបញ្ចប់គឺស្ថិតនៅលើកំណត់ហេតុនេះហើយ។</p>
+        </div>
+    </div>
+
+
+    <div class="w-full h-auto bg-[#F2F6D0] flex justify-center flex-wrap mb-10 ">
+        <div class="w-full text-center mb-5">
+            <h1 class="text-5xl font-bold p-2.5 text-[#443627]">វគ្គ១ កំណត់ហេតុទីពីរ</h1>
+        </div>
+        <div class="w-[85%] h-auto">
+            <p class="text-2xl">ក្នុងនេះគឺជា… សៀវភៅ!</p><br>
+            <p class="text-2xl">វាជាសៀវភៅមួយក្បាល ដែលមានពណ៌ស្វាយដូចគ្នានឹងកំណត់ហេតុចាស់របស់ខ្ញុំដែរ តែមានសភាពថ្មីជាង!​  សុខៗអារម្មណ៍ជាច្រើនដែលកប់ជ្រៅក្នុងចិត្ត  ក៏ត្រូវបានគាស់កកាយឱ្យភ្ញាក់ឡើងដំណាលគ្នា។  ដ្បិតតែរយៈពេលមួយឆ្នាំកន្លងផុតទៅហើយ  តែអារម្មណ៍ដេលដក់ជាប់នឹងសៀវភៅកំណត់ហេតុពណ៌ស្វាយមិនដែលរសាយឡើយ។  រាល់ពេលដែលដៃខ្ញុំចាប់កាន់សៀវភៅថ្មី  អារម្មណ៍ខ្ញុំតែងតែនឹកដល់អតីតកាលដ៏ស្រស់ស្អាតមួយនោះ គ្មានថ្ងៃបំភ្លេចបាន។  រឿងខ្លះវាមានរយៈពេលខ្លីបំផុត តែបែរជាអាចឱ្យយើងចងចាំបំផុតទៅវិញ… </p><br>
+            <p class="text-2xl">ពេលនេះបេះដូងខ្ញុំលោតយ៉ាងញាប់ព្រោះធ្លាប់តែគិតថាគ្រប់យ៉ាងចប់សព្វគ្រប់ក្នុងសៀវភៅកំណត់ហេតុពណ៌ស្វាយនោះទៅហើយ! ចុះនេះជាអ្វី?​ ឬមួយមិនមែនមានតែសៀវភៅកំណត់ហេតុពណ៌ស្វាយមួយក្បាលទេ  ដែលត្រូវបានសរសេរឡើង! តែនៅមានមួយក្បាលទៀត​ដែលខ្ញុំមិនទាន់បានអាន?</p><br>
+            <p class="text-2xl">ខ្ញុំងាកមើលមុខបងវង្សាដែលកំពុងគេងលើគ្រែ ទាំងមិនអស់ចិត្ត ថាហេតុអ្វីក៏គាត់ទើបតែយកវា មកឱ្យខ្ញុំនៅថ្ងៃនេះ? សំណួរជាច្រើនផុសឡើងមកពេញក្នុងខយរក្បាល តែបើសិនចាខ្ញុំមិនបើកសៀវភៅនេះអាន ច្បាស់ជាគ្មានថ្ងៃរកចម្លើយទាំងនោះបានទេ។ ខ្ញុំកាន់សៀវភៅទៅអង្គុយលើកៅអីក្បែរបងវង្សា ចាប់ដៃគាត់ម្ខាងយ៉ាងជាប់ មុននឹងចាប់ផ្ដើម បើកទំព័រដំបូងនៃសៀវភៅកំណត់ហេតុថ្មី ឡើងសន្សឹមៗ…</p><br>
+            <p class="text-2xl">ផ្កាមួយទងរបស់បង!</p><br>
+            <p class="text-2xl">អូនដឹងហើយថា បងមិនមែនជាមនុស្សដែលពូកែសរសេរប៉ុន្មានទេ  តែបងសម្រេចចិត្តសរសេរសៀវភៅមួយក្បាលនេះឡើង ដើម្បីចងក្រងគ្រប់រឿងរ៉ាវ  ដែលមិនមានចារនៅក្នុងកំណត់ហេតុពណ៌ស្វាយ បកស្រាយរឿងរ៉ាវទាំងឡាយ  ដែលអូនមិនបានដឹង និងមិនចងចាំ។</p><br>
+            <p class="text-2xl">មួយឆ្នាំនេះអូនតែងតែសួរបងរហូតមក  តេបងពិតជាមិនដឹងថាត្រូវបកស្រាយយ៉ាងណាំឱ្យអស់សេចក្ដី  ពីអ្វីដែលបានកើតឡើងកាលពី៦០ឆ្នាំមុន  ឱ្យអូនយល់ពីទំហំនៃក្ដីស្រឡាញ់ដែលបងមានចំពោះអូននោះទេ   មានតែទុកឱ្យសំណេរនេះបកស្រាយ និងគាស់កកាយគ្រប់យ៉ាង  ដែលពាក្យសម្ដីមិនអាចរៀបរាប់បាន ជាកាដូអូនក្នុងថ្ងៃពិសេស។</p><br>
+            <p class="text-2xl">បើសិនជាថ្ងៃណាមួយ គ្មានបងនៅលើលោកនេះតទៅទៀត ក៏នៅមានសៀវភៅមួយក្បាលនេះ  ជារបស់ដែលក្ដោបនូវការចងចាំទាំងអស់របស់បង ជាប់នឹងដៃអូនអស់មួយជីវិតដែរ!  សូមថែវាឱ្យដូចជាបេះដូងបងផង! Je t’aime chérie!</p><br>
+            <p class="text-2xl">សរសេរោឡើងនៅក្នុងវីឡាផ្កាពណ៌ស្វាយ ក្រុងកែប <br>
+                ថ្ងៃទី១៧ ខែធ្នូ ឆ្នាំ២០២០ <br>
+                វេហាស៍របស់អូន</p><br>
+        </div>
+    </div>
+
+    <div class="w-full h-auto flex justify-center flex-wrap mb-10">
+        <div class="w-[85%]">
+            <h1 class="text-5xl font-bold text-[#443627]">សៀវភៅរបស់អ្នកនិពន្ធ</h1>
+        </div>
+        <div class="w-full h-[450px] flex justify-center bg-[#F2F6D0] mt-10">
+            <div class="w-[350px] h-[398px] flex-col justify-start items-center gap-6 inline-flex mt-5">
+                <img class="self-stretch h-[350px] rounded-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]" src="../assets/authour.png" />
+                <div class="self-stretch h-6 text-center text-black text-[32px] font-bold font-['Noto Sans Khmer'] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">ម៉ៅ ចាន់រស្មី</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full h-auto flex justify-center">
+        <div class="w-[85%] h-auto">
+            <p class="text-2xl">ឆ្នាំ ១៩៩៥ ខ្ញុំបានចាប់កំណើតនៅខេត្តកណ្តាល ប្រទេសកម្ពុជា  ក្នុងគ្រួសារតូចមួយដែលមានម្តាយជាអ្នកនិពន្ធប្រលោមលោក និងឪពុកជាយោធាក្រុង។  ខ្ញុំជាកូនទោលក្នុងគ្រួសារ តែដោយហេតុថាឪពុកម្តាយរបស់ខ្ញុំបានរស់នៅបែកពីគ្នា ទើបខ្ញុំចំណាយពេលតាំងពីកុមារភាព ជាមួយតែម្តាយប៉ុណ្ណោះ។</p><br>
+            <p class="text-2xl">ខ្ញុំតែងតែជាក្មេងស្រីសាមញ្ញម្នាក់ដែលចូលចិត្តអានប្រលោមលោក និងទស្សនាភាពយន្ត រហូតមកដល់ពេលនេះក៏នៅតែមិនប្រែប្រួល ទើបសៀវភៅ  និងភាពយន្តបានក្លាយជាចំណែកដ៏ធំមួយក្នុងជីវិតខ្ញុំ។ កាលពីកុមារ  ខ្ញុំមិនធ្លាប់ដឹងទេថាខ្លួនឯងចូលចិត្តអ្វីឱ្យច្បាស់លាស់ ដឹងត្រឹមថា  ខ្ញុំស្រឡាញ់សិល្បៈ និងការចែករំលែក។ ថ្ងៃណាក៏ខ្ញុំរាំ ច្រៀង គូរគំនូរ  និងដើរចែកផ្លែឈើឱ្យក្មេងៗក្បែរផ្ទះ  ដើម្បីឱ្យគេព្រមស្តាប់និងមើលការសម្តែងរបស់ខ្ញុំ។  </p><br>
+            <p class="text-2xl">ម្តាយខ្ញុំធ្លាប់និយាយថា “យើងមិនអាចកាន់កាំភ្លើងដើម្បីជួយសង្រ្គោះពិភពលោក តែយើងអាចកាន់ប៊ិចមួយដើម  ដើម្បីជួយសង្គមរបស់យើងបាន” ពេលនោះខ្ញុំក៏ដឹងថា ខ្ញុំគួរធ្វើអ្វី  នោះគឺការធ្វើជាអ្នកនិពន្ធដូចម៉ាក់ដែរ។  ខ្ញុំក៏បានចាប់ផ្តើមការនិពន្ធដំបូងបំផុត នៅឆ្នាំ ២០១៣  ក្នុងនាមជាអ្នកនិពន្ធអត្ថបទភាពយន្ត  ស្របពេលដែលខ្ញុំទើបតែចាប់ផ្តើមថ្នាក់បរិញ្ញាបត្រឆ្នាំទីមួយនៅសាកលវិទ្យាល័យកម្ពុជា។</p><br>
+            <p class="text-2xl">ក្នុងឆ្នាំ ២០១៨ ខ្ញុំបានសម្រេចស្នាដៃភាពយន្តភាគ ជាង១០រឿង និងភាពយន្តដុំ  ជាង១០រឿងដូចគ្នា ថែមទាំងបានប្រែក្លាយទៅជាអ្នកដឹកនាំភាពយន្តមួយរូបថែមទៀត  តាមរយៈការបណ្តុះបណ្តាល ពីនាយកដ្ឋានភាពយន្តកម្ពុជា។</p><br>
+            <p class="text-2xl"> តែគួរឱ្យស្តាយ  ការងារនិពន្ធអត្ថបទភាពយន្ត  មិនអាចឱ្យខ្ញុំមានសេរីភាពគ្រប់គ្រាន់ដើម្បីបញ្ចេញពីគំនិត  និងការស្រមើស្រម៉ៃរបស់ខ្ញុំឱ្យអស់ពីលទ្ធភាពទេ  ព្រោះយើងសរសេរតាមតែគំនិតរបស់ម្ចាស់ផលិតកម្ម ដោយពុំអាចប្រកែកបានឡើយ។  ខ្ញុំក៏យល់ថា មានតែការនិពន្ធប្រលោមលោកប៉ុណ្ណោះ  ទើបខ្ញុំអាចមានសេរីភាពទាំងនោះ។</p><br>
+            <p class="text-2xl">នេះគឺជាស្នាដៃប្រលោមលោកដំបូងបង្អស់ក្នុងជីវិតខ្ញុំ ដែលខ្ញុំសង្ឃឹមថា  វានឹងក្លាយជាយានចម្លងខ្ញុំទៅកាន់ស្នាដៃក្រោយៗទៀត ពេញដោយសេរីភាពពិតប្រាកដ  ក្នុងការបញ្ចេញគំនិត ទស្សនៈ ការស្រមើស្រមៃ និងការចែករំលែក។</p><br>
+        </div>
+    </div>
+
+
+    <footer class="bg-[#F2F6D0]">
+        <span class="text-2xl font-[Poppins] cursor-pointer justify-center items-center flex py-2">
+            <img class="h-10 inline" src="../assets/logo.png" alt="">
+            សៀវភៅគំនិត
+        </span>
+        <h2 class="text-center text-[30px] text-[#443627]">
+            ចាប់ផ្ដើមការអាន​ និងទទួលយកបទពិសោធន៍ថ្មីៗ
+            <br> ជាមួយសៀវភៅគំនិត
+        </h2>
+        <div class="relative justify-center items-center flex py-5 space-x-5">
+            <input type="text" class="pl-10 pr-4 py-2 w-1xl border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="អុីម៉ែល...">
+            <ion-icon name="person-outline" class="absolute left-117"></ion-icon>
+            <button class=" px-4 py-2 bg-[#443627] text-[#D98324] hover:bg-amber-900 hover:text-blue-500 rounded-md">
+                <a href="">សាកល្បង</a>
+            </button>
+        </div>
+        <div class="justify-center items-center flex space-x-5">
+            <a href=""><ion-icon name="logo-twitter" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-facebook" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-instagram" class="w-[40px] h-[40px]"></ion-icon></a>
+            <a href=""><ion-icon name="logo-youtube" class="w-[40px] h-[40px]"></ion-icon></a>
+        </div>
+        <div class="p-5">
+            <ul class="flex justify-center items-center space-x-5">
+                <li><a href="">ទំព័រដើម</a></li>
+                <li><a href="">សៀវភៅ</a></li>
+                <li><a href="">អ្នកនិពន្ធ</a></li>
+                <li><a href="">ព័ត៌មានបន្ថែម</a></li>
+                <li><a href="">អំពីយើង</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    </div>
+
+</body>
+</html>
