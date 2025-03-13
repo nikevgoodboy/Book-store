@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto Sans Khmer"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Noto Sans Khmer";
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+      <div class="flex justify-between items-center">
+        <span class="text-2xl font-[Poppins] cursor-pointer">
+          <img class="h-10 inline" src="../assets/logo.png" alt="" />
+          សៀវភៅគំនិត
+        </span>
+
+        <span
+          class="text-3xl cursor-pointer mx-2 md:hidden block"
+          onclick="Menu(this)"
+        >
+          <ion-icon name="menu-outline"></ion-icon>
+        </span>
+      </div>
+
+      <div>
+        <ul
+          id="menu-list"
+          class="md:flex md:items-center z-50 md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 opacity-0 md:opacity-100 top-[-400px] transition-all ease-in duration-500 bg-white md:bg-transparent"
+        >
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >ទំព័រដើម</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >សៀវភៅ</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >អ្នកនិពន្ធ</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >ព័ត៌មានបន្ថែម</a
+            >
+          </li>
+          <li class="mx-4 my-5 md:my-0">
+            <a class="text-xl hover:text-[#D98324] duration-500" href="#"
+              >អំពីយើង</a
+            >
+          </li>
+
+          <button
+            class="bg-[#443627] text-white duration-500 px-6 py-2 mx-4 hover:bg-amber-700 rounded-lg"
+          >
+            <a class="text-[#D98324]" href="#">ទំនាក់ទំនង</a>
+          </button>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      function Menu(icon) {
+        let list = document.getElementById("menu-list");
+        if (list.classList.contains("top-[-400px]")) {
+          list.classList.replace("top-[-400px]", "top-[80px]");
+          list.classList.replace("opacity-0", "opacity-100");
+          icon.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
+        } else {
+          list.classList.replace("top-[80px]", "top-[-400px]");
+          list.classList.replace("opacity-100", "opacity-0");
+          icon.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
+        }
+      }
+    </script>
+    <div class="">
+      <img
+        src="https://www.southernliving.com/thmb/PnNtH0SZmDrtF-jN0aPtGHou23E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1328567171-e0cc3a2143094e0fb46f7432115b202d.jpg"
+        class=""
+        alt=""
+      />
+    </div>
+    <div class="max-w-6xl mx-auto">
+      <h1
+        class="text-[#443627] font-bold text md:text-4xl text-2xl p-12 flex justify-center"
+      >
+        ថ្មីៗសម្រាប់អ្នក
+      </h1>
+    </div>
+    <div
+      class="max-w-5xl mx-auto p-12 lg:p-5 md:p-12 flex justify-center lg:mb-12 mb-0"
+    >
+      <div
+        class="w-full bg-[#F2F6D0] rounded-xl flex flex-col lg:flex-row items-center"
+      >
+        <div class="w-full lg:w-1/2">
+          <img
+            src="https://cdn.prod.website-files.com/617235cde0463e5aa8d3dc95/65685689a41bc6a28bceecc8_sv3811_a_girl_is_sleeping_on_a_bed_at_night_and_having_vivid.png"
+            class="w-[600px] h-2xl md:w-full md:h-auto rounded-t-xl lg:rounded-bl-xl lg:rounded-tr-none"
+            alt="img"
+          />
+        </div>
+        <div class="flex flex-col items-start p-6 lg:p-12 lg:w-1/2">
+          <div class="w-full">
+            <h4 class="text-[#443627] font-bold text-xl mb-5">ពេលយប់</h4>
+            <p class="text-gray-700">
+              យប់សម្រាប់មនុស្សជាច្រើនគឺជាការសម្រាក មួយចំនួនទៀតធ្វើការ
+              ហើយវារឹតតែប្លែកគឺមិនធ្វើការហើយមិនគេង ចេះតែគិត គិតអស់ហើយ
+              គិតសព្វគិតគ្រប់...គិតថាជីវិតមួយនេះនឹងទៅជាយ៉ាងណា? គេទៅមុខអស់ហើយ
+              ហេតុអ្វីក៏ខ្លួនឯងនៅតែដដែលបែបនេះ
+              ហើយក៏ចេះតែយកខ្លួនឯងប្រៀបធៀបនិងអ្នកនេះអ្នកនោះ?
+            </p>
+          </div>
+          <button
+            class="border-2 border-b-gray-400 px-6 py-2 mt-5 rounded shadow"
+          >
+            អានបន្ត
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto p-12 lg:p-5 md:p-12 flex justify-center">
+      <div
+        class="w-full bg-[#F2F6D0] rounded-xl flex flex-col lg:flex-row-reverse items-center justify-between"
+      >
+        <div class="w-full lg:w-1/2">
+          <img
+            src="https://cdn.prod.website-files.com/617235cde0463e5aa8d3dc95/65685704c16ff1c4e82262b1_sv3811_a_girl_who_tripped_over_with_book_is_getting_up.png"
+            class="w-[500px] h-[350px] md:w-full md:h-auto md:rounded-tr-xl lg:rounded-tl-none md:rounded-tl-xl lg:rounded-br-xl"
+            alt="img"
+          />
+        </div>
+        <div class="flex flex-col items-start p-6 lg:p-12 lg:w-1/2">
+          <div class="w-full">
+            <h4 class="text-[#443627] font-bold text-xl mb-5">
+              បរាជ័យអាចចាប់ផ្តើមជាថ្មីបាន
+            </h4>
+            <p class="text-gray-700">
+              ដួលម្ដងហើយ ដួលម្ដងទៀតមិនមែនជាបញ្ហាទេ
+              តែអ្វីដែលជាបញ្ហានោះគឺយើងដួលហើយ មិនព្រមក្រោកដើរម្ដងទៀតទៅវិញទេ។
+              ជីវិតមួយនេះនរណាដែលមិនធ្លាប់ដួលនោះ យ៉ាងណាក៏មានម្ដងដែរ។
+              កាលពីក្មេងទម្រាំតែយើងអាចដើរបាន យើងដួលច្រើនណាស់ មិនមែនម្ដងឡើយ
+              ហើយបើយើងដួលម្ដងទៀតក៏មិនជាបញ្ហាដែលឱ្យតែយើងក្រោកម្ដងទៀតហើយបន្ត
+              ជំហានទៅមុខ...។
+            </p>
+          </div>
+          <button
+            class="border-2 border-b-gray-400 px-6 py-2 mt-5 rounded shadow"
+          >
+            អានបន្ត
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="max-w-5xl mx-auto p-12 lg:p-5 md:p-12 flex justify-center lg:mb-12 mb-0 mt-12"
+    >
+      <div
+        class="w-full bg-[#F2F6D0] rounded-xl flex flex-col lg:flex-row items-center"
+      >
+        <div class="w-full lg:w-1/2">
+          <img
+            src="https://cdn.prod.website-files.com/617235cde0463e5aa8d3dc95/65685644597b22122d925d0b_sv3811_a_girl_lay_down_on_a_bed.png"
+            class="w-[600px] h-2xl md:w-full md:h-auto rounded-t-xl lg:rounded-bl-xl lg:rounded-tr-none"
+            alt="img"
+          />
+        </div>
+        <div class="flex flex-col items-start p-6 lg:p-12 lg:w-1/2">
+          <div class="w-full">
+            <h4 class="text-[#443627] font-bold text-xl mb-5">ខ្ញុំហត់ណាស់</h4>
+            <p class="text-gray-700">
+              មួយរយៈក្រោយមកនេះខ្ញុំហត់ណាស់ ហត់គ្រប់យ៉ាង មិនថាកាយ ឬចិត្តទេ
+              ពេលខ្លះខ្ញុំសឹងតែមិនចេញមកក្រៅ ខ្ញុំខ្លាចៗនឹងជួបមនុស្សច្រើន
+              ខ្លាចនឹងស្គាល់មនុស្សថ្មី
+              ហើយរឹតតែខ្លាចនូវសភាពដែលខ្ញុំកំពុងតែមានពេលនេះ។
+              ខ្ញុំមិននឹកស្មានថាស្ថានភាពខ្ញុំគឺវាធ្លាក់ដល់ចំនុចមួយនេះទាល់តែសោះខ្ញុំមិនរំពឹងតែវាកើតមាន
+              វាគឺជាការឈឺចាប់ដែលគ្មានសំឡេងតែវាស្ទើរតែសម្លាប់ខ្ញុំខ្លួនឯងទៅហើយ
+              ព្រោះតែការខូចចិត្ត ខកបំណង បរាជ័យ….
+            </p>
+          </div>
+          <button
+            class="border-2 border-b-gray-400 px-6 py-2 mt-5 rounded shadow"
+          >
+            អានបន្ត
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto p-12 lg:p-5 md:p-12 flex justify-center">
+      <div
+        class="w-full bg-[#F2F6D0] rounded-xl flex flex-col lg:flex-row-reverse items-center justify-between"
+      >
+        <div class="w-full lg:w-1/2">
+          <img
+            src="https://cdn.prod.website-files.com/617235cde0463e5aa8d3dc95/64d5c09b33025ace07cbea14_photo_2023-08-11_12-01-25.jpg"
+            class="w-[500px] h-[350px] md:w-full md:h-auto md:rounded-tr-xl lg:rounded-tl-none md:rounded-tl-xl lg:rounded-br-xl"
+            alt="img"
+          />
+        </div>
+        <div class="flex flex-col items-start p-6 lg:p-12 lg:w-1/2">
+          <div class="w-full">
+            <h4 class="text-[#443627] font-bold text-xl mb-5">
+              ឈ្មោះខ្ញុំគឺ “ស្រី”
+            </h4>
+            <p class="text-gray-700">
+              - ត្រឹមជាមនុស្សស្រី មិនយូរទេស្រី នឹងមានប្តីសី មានកូន មានចៅ!
+              -ត្រឹមជាមនុស្សស្រី ធ្វើស្អីមិនកើត កិច្ចការធំដុំយកជាការណ៍មិនកើត!
+              -ត្រឹមជាមនុស្សស្រី ត្រូវតែធ្វើខ្លួនឱ្យស្អាតដើម្បីគាប់ចិត្តប្តី!
+              -ត្រឹមជាមនុស្សស្រី ត្រូវតែចេះកិច្ចការផ្ទះ បោកគក់
+              មើលថែផ្ទះសំបែងឱ្យបានល្អ! - ត្រឹមជាមនុស្សស្រី កុំចង់ស្រមៃខ្ពស់
+              ព្រោះវាទៅមិនរួចទេ មិនយូរមិនឆាប់ នឹងក្លាយជាស្ត្រីមេផ្ទះ
+              និងជាប្រពន្ធគេ សូម្បីតែវិលក្បាលចង្ក្រានក៏មិនជុំផង!
+            </p>
+          </div>
+          <button
+            class="border-2 border-b-gray-400 px-6 py-2 mt-5 rounded shadow"
+          >
+            អានបន្ត
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="max-w-5xl mx-auto p-12 lg:p-5 md:p-12 flex justify-center lg:mb-12 mb-0 mt-12"
+    >
+      <div
+        class="w-full bg-[#F2F6D0] rounded-xl flex flex-col lg:flex-row items-center"
+      >
+        <div class="w-full lg:w-1/2">
+          <img
+            src="https://cdn.prod.website-files.com/617235cde0463e5aa8d3dc95/634a60c13e23cc1c9cbd8c8b_photo_2022-10-15_14-26-52.jpg"
+            class="w-[600px] h-2xl md:w-full md:h-auto rounded-t-xl lg:rounded-bl-xl lg:rounded-tr-none"
+            alt="img"
+          />
+        </div>
+        <div class="flex flex-col items-start p-6 lg:p-12 lg:w-1/2">
+          <div class="w-full">
+            <h4 class="text-[#443627] font-bold text-xl mb-5">
+              រៀនរស់សម្រាប់ថ្ងៃនេះ
+            </h4>
+            <p class="text-gray-700">
+              ការដែលយើងចង់បង្កើតអ្វីមួយឡើងមកសម្រាប់តម្រូវការជីវិតរបស់យើងរៀងៗខ្លួននោះ
+              គឺមិនមែនជាការងាយស្រួលឡើយ
+              រីឯការថែរក្សានូវអ្វីដែលយើងបានបង្កើតឡើងវិញនោះ
+              គឺកាន់តែពិបាកខ្លាំជាងការដែលបង្កើតទៅទៀត។
+              បញ្ហាគ្រប់យ៉ាងដែលកើតមានឡើងនៅក្នុងដំណើរជីវិតនៃមនុស្សសត្វទាំងឡាយ
+              គឺមិនអាចនៅស្ថិតស្ថេររហូតនោះទេ។ ទោះជារឿងរ៉ាវនោះល្អក្តី មិនល្អក្តី
+              បើវាប្រុងកើត វាក៏នឹងកើតហើយ នៅឡើយតែខ្លួនយើងម្នាក់ៗ
+            </p>
+          </div>
+          <button
+            class="border-2 border-b-gray-400 px-6 py-2 mt-5 rounded shadow"
+          >
+            អានបន្ត
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto p-12 lg:p-5 md:p-12 flex justify-center">
+      <div
+        class="w-full bg-[#F2F6D0] rounded-xl flex flex-col lg:flex-row-reverse items-center justify-between"
+      >
+        <div class="w-full lg:w-1/2">
+          <img
+            src="https://cdn.prod.website-files.com/617235cde0463e5aa8d3dc95/61a184bea80aae23bebef791_3a(Photo%20by_%20Monika).jpg"
+            class="w-[500px] h-[350px] md:w-full md:h-auto md:rounded-tr-xl lg:rounded-tl-none md:rounded-tl-xl lg:rounded-br-xl"
+            alt="img"
+          />
+        </div>
+        <div class="flex flex-col items-start p-6 lg:p-12 lg:w-1/2">
+          <div class="w-full">
+            <h4 class="text-[#443627] font-bold text-xl mb-5">ប្រៀបធៀប</h4>
+            <p class="text-gray-700">
+              បើយើងយកខ្លួនឯងទៅប្រៀបធៀបនិងអ្នកដទៃ នោះយើងនឹងចាញ់ប្រៀបគេ
+              ហើយគិតថាយើងមិនដល់គេ យើងមិនដូចគេ យើងមិនល្អដូចគេ…..។
+              យើងនឹងរកមូលហេតុជាច្រើនដែលធ្វើឱ្យខ្លួនឯងមានអារម្មណ៍ថាអន់ជាងគេ
+              អ្នកទាំងអស់គ្នាប្រហែលធ្លាប់មានបទពិសោធបែបហ្នឹងហើយមែនទេ?
+            </p>
+          </div>
+          <button
+            class="border-2 border-b-gray-400 px-6 py-2 mt-5 rounded shadow"
+          >
+            អានបន្ត
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-[#F2F6D0]">
+      <span
+        class="text-2xl font-[Poppins] cursor-pointer justify-center items-center flex py-2"
+      >
+        <img class="h-10 inline" src="../assets/logo.png" alt="" />
+        សៀវភៅគំនិត
+      </span>
+      <h2 class="text-center text-[30px] text-[#443627]">
+        ចាប់ផ្ដើមការអាន​ និងទទួលយកបទពិសោធន៍ថ្មីៗ
+        <br />
+        ជាមួយសៀវភៅគំនិត
+      </h2>
+      <div class="relative justify-center items-center flex py-5 space-x-5">
+        <input
+          type="text"
+          class="pl-10 pr-4 py-2 w-1xl border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="អុីម៉ែល..."
+        />
+        <ion-icon name="person-outline" class="absolute left-117"></ion-icon>
+        <button
+          class="px-4 py-2 bg-[#443627] text-[#D98324] hover:bg-amber-900 hover:text-blue-500 rounded-md"
+        >
+          <a href="">សាកល្បង</a>
+        </button>
+      </div>
+      <div class="justify-center items-center flex space-x-5">
+        <a href=""
+          ><ion-icon name="logo-twitter" class="w-[40px] h-[40px]"></ion-icon
+        ></a>
+        <a href=""
+          ><ion-icon name="logo-facebook" class="w-[40px] h-[40px]"></ion-icon
+        ></a>
+        <a href=""
+          ><ion-icon name="logo-instagram" class="w-[40px] h-[40px]"></ion-icon
+        ></a>
+        <a href=""
+          ><ion-icon name="logo-youtube" class="w-[40px] h-[40px]"></ion-icon
+        ></a>
+      </div>
+      <div class="p-5">
+        <ul class="flex justify-center items-center space-x-5">
+          <li><a href="">ទំព័រដើម</a></li>
+          <li><a href="">សៀវភៅ</a></li>
+          <li><a href="">អ្នកនិពន្ធ</a></li>
+          <li><a href="">ព័ត៌មានបន្ថែម</a></li>
+          <li><a href="">អំពីយើង</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
