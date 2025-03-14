@@ -21,7 +21,7 @@
     <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
         <div class="flex justify-between items-center">
             <span class="text-2xl font-[Poppins] cursor-pointer">
-          <img class="h-10 inline" src="../assets/logo.png" alt="" />
+          <img class="h-10 inline" src="src/assets/logo.png" alt="" />
                 សៀវភៅគំនិត
             </span>
     
@@ -108,24 +108,24 @@
               fill="none"
               viewBox="0 0 18 20"
             >
-              <path
+              <!-- <path
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M3 5v10M3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0V6a3 3 0 0 0-3-3H9m1.5-2-2 2 2 2"
-              />
+              /> -->
             </svg>
           </div>
-          <input
+          <!-- <input
             type="text"
             id="simple-search"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Search branch name..."
             required
-          />
+          /> -->
         </div>
-        <button
+        <!-- <button
           type="submit"
           class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
@@ -145,7 +145,7 @@
             />
           </svg>
           <span class="sr-only">Search</span>
-        </button>
+        </button> -->
       </form>
     </div>
 
@@ -158,87 +158,114 @@
       <div class="sm:w-1/2 w-97 h-1 bg-[#D98324] mt-4"></div>
     </div>
 
-    <div class="bg-[#F2F0F0] w-full h-3xl mt-12 p-18">
-      <h1
-        class="text-[#443627] font-bold flex justify-center text md:text-4xl text-2xl p-10"
-      >
-        សៀវភៅទើបតែបោះពុម្ភផ្សាយ
-      </h1>
-      <div class="flex justify-center items-center flex-wrap gap-12">
-        <a href="">
-          <div class="">
-            <img
-              src="src/assets/នភាល័យ ភាគ៣.png"
-              class="w-[246px] h-[318px] object-contain"
-              alt="នភាល័យ ភាគ៣"
-            />
+    <div class="w-full h-3xl mt-12 p-18">
+      <div class="max-w-5xl mx-auto p-6 rounded-lg">
+          <h1 class="text-2xl font-bold mb-4 text-center">សៀវភៅលក់ដាច់ជាងគេ</h1>
+          <div class="flex justify-center mb-6">
+              <input id="subject" type="text" placeholder="បញ្ចូលប្រធានបទ" class="w-full max-w-md p-2 border rounded">
+              <button onclick="fetchBooks()" class="ml-2 bg-blue-500 text-white p-2 rounded">ស្វែងរក</button>
           </div>
-        </a>
-        <a href="">
-          <div class="">
-            <img
-              src="src/assets/កុលាបខ្មៅ.png"
-              class="w-[246px] h-[318px] object-contain"
-              alt="កុលាបខ្មៅ"
-            />
-          </div>
-        </a>
-        <a href="">
-          <div class="">
-            <img
-              src="src/assets/ឈុតនភាល័យ.png"
-              class="w-[246px] h-[320px] object-contain"
-              alt="ឈុតនភាល័យ"
-            />
-          </div>
-        </a>
-        <a href="">
-          <div class="">
-            <img
-              src="src/assets/ស្នេហ៍ក្នុងអណ្ដាតភ្លើង.png"
-              class="w-[246px] h-[320px] object-contain"
-              alt="ស្នេហ៍ក្នុងអណ្ដាតភ្លើង"
-            />
-          </div>
-        </a>
-        <a href="">
-          <div class="">
-            <img
-              src="src/assets/នភាល័យ ភាគ២.png"
-              class="w-[246px] h-[320px] object-contain"
-              alt="នភាល័យ ភាគ២"
-            />
-          </div>
-        </a>
-        <a href="">
-          <div class="">
-            <img
-              src="src/assets/ប្រលោមចិត្តភាគ ២.png"
-              class="w-[246px] h-[320px] object-contain"
-              alt="ប្រលោមចិត្តភាគ ២"
-            />
-          </div>
-        </a>
-        <a href="">
-          <div class="">
-            <img
-              src="src/assets/ថ្ងៃថ្មីនៅតែមាន.png"
-              class="w-[246px] h-[320px] object-contain"
-              alt="ថ្ងៃថ្មីនៅតែមាន"
-            />
-          </div>
-        </a>
-        <a href="">
-          <div class="">
-            <img
-              src="src/assets/និស្ស័យ.png"
-              class="w-[246px] h-[320px] object-contain"
-              alt="និស្ស័យ"
-            />
-          </div>
-        </a>
+          <div id="results" class="flex justify-center flex-wrap gap-12"></div>
       </div>
-    </div>
+
+      <div id="loading" class="hidden text-center text-gray-500">កំពុងបង្ហាញ...</div>
+
+      <script>
+          function fetchBooks() {
+  const subject = document.getElementById("subject").value || "bestsellers";
+  const resultsDiv = document.getElementById("results");
+  const loadingDiv = document.getElementById("loading");
+  const sampleBooksDiv = document.getElementById("sample-books");  // Reference to the sample books div
+
+  // Hide the sample books before starting the search
+  sampleBooksDiv.style.display = "none";  // Hide the sample books
+
+  // Clear any existing content in results and show the loading indicator
+  resultsDiv.innerHTML = "";
+  loadingDiv.classList.remove("hidden");
+
+  fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${subject}`)
+      .then(response => response.json())
+      .then(data => {
+          resultsDiv.innerHTML = "";  // Clear any existing content
+          loadingDiv.classList.add("hidden"); // Hide loading indicator
+          
+          if (data.items) {
+              data.items.forEach(book => {
+                  const bookInfo = book.volumeInfo;
+                  resultsDiv.innerHTML += `
+                      <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
+                          <a href="${bookInfo.infoLink || '#'}" target="_blank">
+                              <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex justify-center items-center flex overflow-hidden bg-gray-200">
+                                  <img class="object-contain w-full h-full hover:opacity-75" src="${bookInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/230x330'}" alt="${bookInfo.title}">
+                              </div>
+                          </a>
+                          <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
+                              <div class="text-center text-black text-2xl font-medium hover:text-[#d98324]">
+                                  <a href="${bookInfo.infoLink || '#'}" target="_blank">${bookInfo.title}</a>
+                              </div>
+                          </div>
+                      </div>
+                  `;
+              });
+          } else {
+              resultsDiv.innerHTML = "<p>គ្មានសៀវភៅណាមួយ!</p>";
+          }
+      })
+      .catch(error => {
+          loadingDiv.classList.add("hidden"); // Hide loading on error
+          console.error("Error fetching books:", error);
+          alert("មានបញ្ហាក្នុងការទាញយកសៀវភៅ។ សូមព្យាយាមម្តងទៀត។");
+      });
+}
+
+      </script>
+
+<div id="sample-books" class="flex justify-center items-center flex-wrap gap-12">
+  <!-- Sample Khmer books -->
+  <a href="#">
+      <div>
+          <img src="src/assets/នភាល័យ ភាគ៣.png" class="w-[246px] h-[318px] object-contain" alt="នភាល័យ ភាគ៣">
+      </div>
+  </a>
+  <a href="#">
+      <div>
+          <img src="src/assets/កុលាបខ្មៅ.png" class="w-[246px] h-[318px] object-contain" alt="កុលាបខ្មៅ">
+      </div>
+  </a>
+  <a href="#">
+      <div>
+          <img src="src/assets/ឈុតនភាល័យ.png" class="w-[246px] h-[320px] object-contain" alt="ឈុតនភាល័យ">
+      </div>
+  </a>
+  <a href="#">
+      <div>
+          <img src="src/assets/ស្នេហ៍ក្នុងអណ្ដាតភ្លើង.png" class="w-[246px] h-[320px] object-contain" alt="ស្នេហ៍ក្នុងអណ្ដាតភ្លើង">
+      </div>
+  </a>
+  <a href="#">
+      <div>
+          <img src="src/assets/នភាល័យ ភាគ២.png" class="w-[246px] h-[320px] object-contain" alt="នភាល័យ ភាគ២">
+      </div>
+  </a>
+  <a href="#">
+      <div>
+          <img src="src/assets/ប្រលោមចិត្តភាគ ២.png" class="w-[246px] h-[320px] object-contain" alt="ប្រលោមចិត្តភាគ ២">
+      </div>
+  </a>
+  <a href="#">
+      <div>
+          <img src="src/assets/ថ្ងៃថ្មីនៅតែមាន.png" class="w-[246px] h-[320px] object-contain" alt="ថ្ងៃថ្មីនៅតែមាន">
+      </div>
+  </a>
+  <a href="#">
+      <div>
+          <img src="src/assets/និស្ស័យ.png" class="w-[246px] h-[320px] object-contain" alt="និស្ស័យ">
+      </div>
+  </a>
+</div>
+
+</div>
     <h1 class="text-[#443627] font-bold text md:text-4xl text-2xl p-12 ms-10">
       ថ្មីៗសម្រាប់អ្នក
     </h1>
