@@ -33,14 +33,6 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-  <!-- Navbar -->
-  <header class="bg-blue-600 text-white py-4">
-    <div class="container mx-auto text-center">
-      <h1 class="text-3xl font-semibold">Bookstore</h1>
-      <p>Search for Books by Author</p>
-    </div>
-  </header>
-
   <!-- Search Section -->
   <section class="container mx-auto p-6">
     <div class="flex justify-center mb-6">
@@ -65,13 +57,12 @@
   </section>
 
   <script>
-    // Function to fetch books by author or default books
-    async function fetchBooks(query = '') {
-      let url = query
-        ? `https://www.googleapis.com/books/v1/volumes?q=inauthor:${query}&maxResults=40`
-        : `https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=40`;  // Default books if no query
-      
-      const response = await fetch(url);
+    // Function to fetch books by author
+    async function fetchBooks() {
+      const author = document.getElementById('authorInput').value;
+      if (!author) return alert('Please enter an author name.');
+
+      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${author}`);
       const data = await response.json();
 
       // Clear previous results
@@ -102,34 +93,19 @@
           bookResults.appendChild(bookItem);
         });
       } else {
-        bookResults.innerHTML = `<p class="col-span-3 text-center text-xl text-gray-600">No books found.</p>`;
+        bookResults.innerHTML = `<p class="col-span-3 text-center text-xl text-gray-600">No books found for this author.</p>`;
       }
     }
 
     // Event listener for the search button
-    document.getElementById('searchButton').addEventListener('click', () => {
-      const author = document.getElementById('authorInput').value;
-      if (author) {
-        fetchBooks(author);  // Fetch books by the entered author
-      } else {
-        alert('Please enter an author name.');
-      }
-    });
+    document.getElementById('searchButton').addEventListener('click', fetchBooks);
     
     // Allow enter key to trigger search
     document.getElementById('authorInput').addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
-        const author = document.getElementById('authorInput').value;
-        if (author) {
-          fetchBooks(author);
-        } else {
-          alert('Please enter an author name.');
-        }
+        fetchBooks();
       }
     });
-
-    // Fetch default books when the page loads
-    window.onload = fetchBooks;
   </script>
 
 </body>
