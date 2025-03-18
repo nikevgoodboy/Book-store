@@ -92,417 +92,60 @@
     
     
 
-    <div class="w-full h-auto flex justify-center flex-wrap gap-20">
+    <div id="results" class=" ms-20 sm:ms-0  md:ms-0  lg:ms-0 mt-6 px-4 md:px-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Books will be displayed here -->
+    </div>
 
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
+    <script>
+        // Function to fetch books from the Google Books API (with the provided endpoint)
+        async function fetchBooks() {
+            const response = await fetch('https://www.googleapis.com/books/v1/volumes?q=free+ebooks&filter=free-ebooks&maxResults=32');
+            const data = await response.json();
+            return data.items || [];
+        }
+           
+        // Function to display books
+        function displayBooks(books) {
+            const resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            books.forEach(book => {
+                const bookInfo = book.volumeInfo;
+                const bookElement = document.createElement("div");
+                bookElement.classList.add("w-[230px]");
+
+                bookElement.innerHTML = `
+
+                     <div  class="w-auto h-[500px] flex-col justify-center flex items-start gap-2.5 inline-flex">
             <a href="">
                 <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden transition-all duration-300 ease-in-out relative">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img1.png" />
+                    <img src="${bookInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/150'}" alt="${bookInfo.title}" class="object-contain w-full h-full hover:opacity-75" />
                 </div>
             </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            បុរសឈុតពណ៌ស
+            <div class="w-[230px] h-48 flex items-center justify-center">
+                <div class="w-[230px] h-full flex justify-center items-center">
+                    <div class="text-center  text-black font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
+                        <a href="${bookInfo.infoLink}" target="_blank" class="hover:text-[#d98324]">
+                             <h2 class="text-xl font-semibold">${bookInfo.title}</h2>
                         </a>
                     </div>  
                 </div>
             </div>
         </div>
+ 
+                `;
 
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img2.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            អព្ភូតស្នេហ៍ទ្វេគូ
-                        </a>                     
-                    </div>
-                </div>
-            </div>
-        </div>
+                resultsContainer.appendChild(bookElement);
+            });
+        }
 
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img3.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            បុរសឈុតពណ៌ស ភាគ២
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        // Fetch and display books when the page loads
+        window.onload = async () => {
+            const books = await fetchBooks();
+            displayBooks(books);
+        };
+    </script>
 
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img4.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            ថ្ងៃថ្មីនៅតែមាន ភាគ២
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img5.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            សង្ឃរា
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img6.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            ស្អែកម្ដងទៀត
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img7.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            តាមប្រមាញ់ឧក្រិដ្ឋជន
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img8.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            នភាល័យ ភាគ២
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img9.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            ប្រលោមចិត្តភាគ ១
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img10.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            ប្រលោមចិត្តភាគ ២
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img11.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            កុលាបខ្មៅ
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img12.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            ស្នេហ៍ក្នុងអណ្ដាតភ្លើង
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img13.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            រលកបោកខ្សាច់
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img14.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            នភាល័យ ភាគ៣
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img15.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            ថនភាល័យ
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img16.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            សែងសុរិយា
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img17.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            កាពីទែនជីវិតភាគ ១
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img18.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            កាពីទែនជីវិតភាគ​ ២
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img19.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            បាត់បង់តែមិនបោះបង់
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img20.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            និស្ស័យ
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img21.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            អន្យតិរ្ថិយ
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img22.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            ប្រអប់ឈើក្រអូប
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img23.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            អាថ៏កំបាំងថ្នាក់ខ៨
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-[230px] h-[400px] flex-col justify-start items-start gap-2.5 inline-flex">
-            <a href="">
-                <div class="w-[230px] h-[330px] shadow-[6px_10px_4px_0px_rgba(0,0,0,0.25)] flex-col justify-center items-center flex overflow-hidden">
-                    <img class="object-contain w-fit h-fit hover:opacity-75" src="../assets/bookpage-img24.png" />
-                </div>
-            </a>
-            <div class="w-[230px] h-[70px] -mt-5 flex items-center justify-center">
-                <div class="w-full h-full flex justify-center items-center">
-                    <div class="text-center  text-black text-2xl font-medium [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">
-                        <a href="" class="hover:text-[#d98324]">
-                            កូនក្រមុំទី៧
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     <footer class="bg-[#F2F6D0]">
         <span class="text-2xl font-[Poppins] cursor-pointer justify-center items-center flex py-2">
