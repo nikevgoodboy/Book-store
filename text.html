@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <div class="max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
+        <h1 class="text-3xl font-bold text-center mb-6">Book Search</h1>
+
+        <!-- Input and Search Button -->
+        <div class="flex items-center mb-6">
+            <input type="text" id="bookTitle" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter book title">
+            <button onclick="searchBooks()" class="ml-4 px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-md hover:bg-gradient-to-l transform hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500">Search</button>
+        </div>
+
+        <!-- Default Book Results (12 Books) -->
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Default Book Recommendations</h2>
+        <div id="bookResults" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    </div>
+
+    <script>
+        // Function to load default books
+        function loadDefaultBooks() {
+            const defaultBooks = [
+                { title: 'The Great Gatsby', authors: ['F. Scott Fitzgerald'], image: 'https://covers.openlibrary.org/b/id/7200226-L.jpg', description: 'A novel about the American dream.' },
+                { title: 'Moby Dick', authors: ['Herman Melville'], image: 'https://covers.openlibrary.org/b/id/10570347-L.jpg', description: 'A story of the whaling voyage.' },
+                { title: 'To Kill a Mockingbird', authors: ['Harper Lee'], image: 'https://covers.openlibrary.org/b/id/8224771-L.jpg', description: 'A novel about racism and innocence.' },
+                { title: '1984', authors: ['George Orwell'], image: 'https://covers.openlibrary.org/b/id/8222224-L.jpg', description: 'A dystopian future ruled by surveillance.' },
+                { title: 'Pride and Prejudice', authors: ['Jane Austen'], image: 'https://covers.openlibrary.org/b/id/8223964-L.jpg', description: 'A love story set in the Regency era.' },
+                { title: 'Brave New World', authors: ['Aldous Huxley'], image: 'https://covers.openlibrary.org/b/id/7103931-L.jpg', description: 'A vision of a technologically advanced dystopian world.' },
+                { title: 'The Catcher in the Rye', authors: ['J.D. Salinger'], image: 'https://covers.openlibrary.org/b/id/7375241-L.jpg', description: 'A story of a young boy coming of age.' },
+                { title: 'War and Peace', authors: ['Leo Tolstoy'], image: 'https://covers.openlibrary.org/b/id/7149842-L.jpg', description: 'A tale of Russian aristocracy during the Napoleonic wars.' },
+                { title: 'The Hobbit', authors: ['J.R.R. Tolkien'], image: 'https://covers.openlibrary.org/b/id/7732120-L.jpg', description: 'A tale of adventure in Middle-earth.' },
+                { title: 'The Odyssey', authors: ['Homer'], image: 'https://covers.openlibrary.org/b/id/7236819-L.jpg', description: 'An epic journey of a Greek hero.' },
+                { title: 'Crime and Punishment', authors: ['Fyodor Dostoevsky'], image: 'https://covers.openlibrary.org/b/id/7460521-L.jpg', description: 'A psychological novel about guilt and redemption.' },
+                { title: 'The Brothers Karamazov', authors: ['Fyodor Dostoevsky'], image: 'https://covers.openlibrary.org/b/id/7883182-L.jpg', description: 'A philosophical novel dealing with faith and morality.' },
+                { title: 'Anna Karenina', authors: ['Leo Tolstoy'], image: 'https://covers.openlibrary.org/b/id/7900260-L.jpg', description: 'A story of love, betrayal, and tragedy in 19th-century Russia.' }
+            ];
+
+            // Populate book results with default books
+            const resultsContainer = document.getElementById('bookResults');
+            resultsContainer.innerHTML = '';
+            defaultBooks.forEach(book => {
+                const bookElement = document.createElement('div');
+                bookElement.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'border', 'border-gray-200', 'transition-all', 'hover:scale-105', 'duration-200');
+                bookElement.innerHTML = `
+                    <img src="${book.image}" alt="${book.title}" class="w-32 h-48 object-cover rounded-md mx-auto mb-4">
+                    <div class="text-center">
+                        <div class="font-semibold text-xl text-gray-800">${book.title}</div>
+                        <div class="italic text-gray-600">${book.authors.join(', ')}</div>
+                        <p class="mt-2 text-gray-700">${book.description.slice(0, 100)}...</p>
+                    </div>
+                `;
+                resultsContainer.appendChild(bookElement);
+            });
+        }
+
+        // Function to search books via the API
+        async function searchBooks() {
+            const bookTitle = document.getElementById('bookTitle').value;
+            if (!bookTitle) {
+                alert('Please enter a book title');
+                return;
+            }
+
+            const url = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                // Clear previous results
+                document.getElementById('bookResults').innerHTML = '';
+
+                if (data.items) {
+                    data.items.forEach(item => {
+                        const book = item.volumeInfo;
+                        const bookElement = document.createElement('div');
+                        bookElement.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'border', 'border-gray-200', 'transition-all', 'hover:scale-105', 'duration-200');
+                        bookElement.innerHTML = `
+                            <img src="${book.imageLinks?.thumbnail || 'https://via.placeholder.com/100'}" alt="${book.title}" class="w-32 h-48 object-cover rounded-md mx-auto mb-4">
+                            <div class="text-center">
+                                <div class="font-semibold text-xl text-gray-800">${book.title}</div>
+                                <div class="italic text-gray-600">${book.authors ? book.authors.join(', ') : 'Unknown Author'}</div>
+                                <p class="mt-2 text-gray-700">${book.description ? book.description.slice(0, 100) + '...' : 'No description available'}</p>
+                            </div>
+                        `;
+                        document.getElementById('bookResults').appendChild(bookElement);
+                    });
+                } else {
+                    document.getElementById('bookResults').innerHTML = '<p class="text-center text-gray-500">No books found.</p>';
+                }
+            } catch (error) {
+                document.getElementById('bookResults').innerHTML = '<p class="text-center text-red-500">Error fetching book data. Please try again later.</p>';
+                console.error('Error fetching book data:', error);
+            }
+        }
+
+        // Load default books when the page loads
+        window.onload = loadDefaultBooks;
+    </script>
+
+</body>
+
+</html>

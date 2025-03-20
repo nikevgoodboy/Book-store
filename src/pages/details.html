@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details | សៀវភៅ</title>
+    <link rel="stylesheet" href="../output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-[#F2F6D0] to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="p-5 bg-white shadow-lg md:flex md:items-center md:justify-between sticky top-0 z-50">
+        <div class="flex justify-between items-center">
+            <span class="text-2xl font-[Poppins] cursor-pointer" href="../../index.html">
+                <img class="h-10 inline mr-2" src="../assets/logo.png" alt="">
+                សៀវភៅគំនិត
+            </span>
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block text-[#443627]">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+        <div>
+            <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+                <li class="mx-4 my-5 md:my-0"><a class="text-xl hover:text-[#D98324] duration-500 font-medium" href="../../index.html">ទំព័រដើម</a></li>
+                <li class="mx-4 my-5 md:my-0"><a class="text-xl hover:text-[#D98324] duration-500 font-medium" href="books.html">សៀវភៅ</a></li>
+                <li class="mx-4 my-5 md:my-0"><a class="text-xl hover:text-[#D98324] duration-500 font-medium" href="authors.html">អ្នកនិពន្ធ</a></li>
+                <li class="mx-4 my-5 md:my-0"><a class="text-xl hover:text-[#D98324] duration-500 font-medium" href="Blog.html">ព័ត៌មានបន្ថែម</a></li>
+                <li class="mx-4 my-5 md:my-0"><a class="text-xl hover:text-[#D98324] duration-500 font-medium" href="about.html">អំពីយើង</a></li>
+                <button class="bg-[#443627] text-white px-4 py-2 rounded-lg mx-4 hover:bg-[#D98324] hover:text-white transition-all duration-300">
+                    <a class="text-[#D98324] hover:text-white" href="#">ទំនាក់ទំនង</a>
+                </button>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        function Menu(e) {
+            let list = document.querySelector('ul');
+            e.name === 'menu' ? (e.name = "close", list.classList.add('top-[80px]'), list.classList.add('opacity-100')) : 
+                               (e.name = "menu", list.classList.remove('top-[80px]'), list.classList.remove('opacity-100'));
+        }
+    </script>
+
+    <!-- Book Details Section -->
+    <div class="container mx-auto px-4 py-16 max-w-5xl">
+        <div id="book-details" class="bg-white rounded-xl shadow-2xl p-8 md:flex gap-10 transform transition-all duration-300 hover:shadow-xl">
+            <!-- Book details will be populated here -->
+        </div>
+        <div class="mt-8 text-center">
+            <a href="books.html" class="inline-flex items-center text-[#D98324] hover:text-[#443627] text-lg font-medium group transition-colors duration-300">
+                <ion-icon name="arrow-back-outline" class="mr-2 text-2xl group-hover:-translate-x-1 transition-transform duration-300"></ion-icon>
+                Back to Books
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#F2F6D0] shadow-inner mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <span class="text-2xl font-[Poppins] cursor-pointer justify-center items-center flex py-2">
+                <img class="h-10 inline mr-2" src="../assets/logo.png" alt="">
+                សៀវភៅគំនិត
+            </span>
+            <h2 class="text-center text-[28px] md:text-[32px] text-[#443627] font-semibold leading-tight">
+                ចាប់ផ្ដើមការអាន និងទទួលយក<br>បទពិសោធន៍ថ្មីៗ ជាមួយសៀវភៅគំនិត
+            </h2>
+            <div class="relative justify-center items-center flex py-6 space-x-4">
+                <div class="relative w-full max-w-md">
+                    <ion-icon name="mail-outline" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#443627] text-xl"></ion-icon>
+                    <input type="text" class="pl-10 pr-4 py-3 w-full border border-[#D98324]/30 rounded-full focus:outline-none focus:ring-2 focus:ring-[#D98324] bg-white shadow-sm" placeholder="អុីម៉ែល...">
+                </div>
+                <button class="px-6 py-3 bg-[#443627] text-[#D98324] rounded-full hover:bg-[#D98324] hover:text-white transition-all duration-300 shadow-md">
+                    <a href="#">សាកល្បង</a>
+                </button>
+            </div>
+            <div class="justify-center items-center flex space-x-6 py-4">
+                <a href="#" class="text-[#443627] hover:text-[#D98324] transform hover:scale-110 transition-all duration-300"><ion-icon name="logo-twitter" class="w-8 h-8"></ion-icon></a>
+                <a href="#" class="text-[#443627] hover:text-[#D98324] transform hover:scale-110 transition-all duration-300"><ion-icon name="logo-facebook" class="w-8 h-8"></ion-icon></a>
+                <a href="#" class="text-[#443627] hover:text-[#D98324] transform hover:scale-110 transition-all duration-300"><ion-icon name="logo-instagram" class="w-8 h-8"></ion-icon></a>
+                <a href="#" class="text-[#443627] hover:text-[#D98324] transform hover:scale-110 transition-all duration-300"><ion-icon name="logo-youtube" class="w-8 h-8"></ion-icon></a>
+            </div>
+            <div class="p-5">
+                <ul class="flex justify-center items-center space-x-6 md:space-x-10 text-[#443627]">
+                    <li><a href="#" class="hover:text-[#D98324] transition-colors duration-300 font-medium">ទំព័រដើម</a></li>
+                    <li><a href="#" class="hover:text-[#D98324] transition-colors duration-300 font-medium">សៀវភៅ</a></li>
+                    <li><a href="#" class="hover:text-[#D98324] transition-colors duration-300 font-medium">អ្នកនិពន្ធ</a></li>
+                    <li><a href="#" class="hover:text-[#D98324] transition-colors duration-300 font-medium">ព័ត៌មានបន្ថែម</a></li>
+                    <li><a href="#" class="hover:text-[#D98324] transition-colors duration-300 font-medium">អំពីយើង</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function fetchBookDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('bookId');
+            
+            if (!bookId) {
+                document.getElementById('book-details').innerHTML = '<p class="text-center text-red-500 font-medium">No book ID provided</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`);
+                const book = await response.json();
+                const bookInfo = book.volumeInfo;
+
+                document.getElementById('book-details').innerHTML = `
+                    <div class="md:w-1/3 flex justify-center">
+                        <div class="relative group">
+                            <img src="${bookInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/128x192'}" 
+                                 alt="${bookInfo.title}" 
+                                 class="w-64 h-auto rounded-lg shadow-lg transform group-hover:scale-105 transition-all duration-300">
+                            <div class="absolute inset-0 bg-[#D98324]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h1 class="text-3xl md:text-4xl font-bold text-[#443627] mb-4 leading-tight">${bookInfo.title || 'No title'}</h1>
+                        <div class="space-y-3 text-[#443627]/80">
+                            <p class="text-lg">
+                                <span class="font-semibold text-[#443627]">Author(s):</span> 
+                                ${bookInfo.authors ? bookInfo.authors.join(', ') : 'Unknown'}
+                            </p>
+                            <p class="text-lg">
+                                <span class="font-semibold text-[#443627]">Publisher:</span> 
+                                ${bookInfo.publisher || 'Not available'}
+                            </p>
+                            <p class="text-lg">
+                                <span class="font-semibold text-[#443627]">Published:</span> 
+                                ${bookInfo.publishedDate || 'Not available'}
+                            </p>
+                            <p class="text-lg">
+                                <span class="font-semibold text-[#443627]">Pages:</span> 
+                                ${bookInfo.pageCount || 'Not available'}
+                            </p>
+                        </div>
+                        <p class="text-[#443627]/70 mt-6 mb-8 leading-relaxed text-lg">${bookInfo.description || 'No description available'}</p>
+                        <a href="${bookInfo.infoLink || '#'}" 
+                           target="_blank" 
+                           class="inline-flex items-center bg-[#443627] text-[#D98324] px-6 py-3 rounded-full hover:bg-[#D98324] hover:text-white transition-all duration-300 shadow-md font-medium">
+                            <ion-icon name="book-outline" class="mr-2 text-xl"></ion-icon>
+                            View on Google Books
+                        </a>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error fetching book details:', error);
+                document.getElementById('book-details').innerHTML = '<p class="text-center text-red-500 font-medium">Error loading book details</p>';
+            }
+        }
+
+        fetchBookDetails();
+    </script>
+</body>
+</html>
